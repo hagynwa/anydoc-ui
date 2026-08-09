@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anydoc — Document → Markdown</title>
+<style>
+  :root { --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3a; --text: #e4e4e7; --muted: #71717a; --accent: #6366f1; --accent-hover: #818cf8; --green: #22c55e; --red: #ef4444; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 2rem 1rem; }
+  h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: .25rem; }
+  .subtitle { color: var(--muted); font-size: .875rem; margin-bottom: 2rem; }
+
+  .drop-zone { width: 100%; max-width: 700px; border: 2px dashed var(--border); border-radius: 12px; padding: 3rem 2rem; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; position: relative; }
+  .drop-zone.drag-over { border-color: var(--accent); background: rgba(99,102,241,.08); }
+  .drop-zone input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .drop-zone p { color: var(--muted); font-size: .9rem; pointer-events: none; }
+  .drop-zone .icon { font-size: 2rem; margin-bottom: .5rem; pointer-events: none; }
+  .formats { color: var(--muted); font-size: .75rem; margin-top: .5rem; pointer-events: none; }
+
+  .status { margin-top: 1rem; font-size: .85rem; min-height: 1.5rem; }
+  .status.error { color: var(--red); }
+  .status.ok { color: var(--green); }
+
+  .output-wrap { width: 100%; max-width: 700px; margin-top: 1.5rem; display: none; flex-direction: column; gap: .5rem; }
+  .output-wrap.visible { display: flex; }
+  .toolbar { display: flex; justify-content: space-between; align-items: center; }
+  .toolbar .filename { font-weight: 500; font-size: .9rem; }
+  .toolbar .actions { display: flex; gap: .5rem; }
+  .btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: .4rem .8rem; border-radius: 6px; font-size: .8rem; cursor: pointer; transition: background .15s; }
+  .btn:hover { background: var(--border); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: var(--accent-hover); }
+
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); }
+  .tab { padding: .5rem 1rem; font-size: .8rem; cursor: pointer; border-bottom: 2px solid transparent; color: var(--muted); transition: color .15s; }
+  .tab.active { color: var(--text); border-bottom-color: var(--accent); }
+
+  .output-box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; min-height: 300px; max-height: 70vh; overflow: auto; font-size: .85rem; line-height: 1.6; }
+  .output-box pre { white-space: pre-wrap; word-break: break-word; font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: .8rem; unicode-bidi: plaintext; }
+  .output-box.rtl, .output-box.rtl pre { direction: rtl; text-align: right; }
+  .output-box.rtl.rendered th, .output-box.rtl.rendered td { text-align: right; }
+  .output-box.rendered { font-family: inherit; }
+  .output-box.rendered h1, .output-box.rendered h2, .output-box.rendered h3 { margin: 1rem 0 .5rem; }
+  .output-box.rendered h1 { font-size: 1.4rem; }
+  .output-box.rendered h2 { font-size: 1.2rem; }
+  .output-box.rendered h3 { font-size: 1.05rem; }
+  .output-box.rendered p { margin: .4rem 0; }
+  .output-box.rendered ul, .output-box.rendered ol { padding-left: 1.5rem; margin: .4rem 0; }
+  .output-box.rendered table { border-collapse: collapse; width: 100%; margin: .5rem 0; font-size: .8rem; }
+  .output-box.rendered th, .output-box.rendered td { border: 1px solid var(--border); padding: .35rem .6rem; text-align: left; }
+  .output-box.rendered th { background: rgba(99,102,241,.12); }
+  .output-box.rendered code { background: rgba(255,255,255,.06); padding: .15rem .35rem; border-radius: 4px; font-size: .8rem; }
+  .output-box.rendered pre code { background: none; padding: 0; }
+  .output-box.rendered blockquote { border-left: 3px solid var(--accent); padding-left: .8rem; color: var(--muted); margin: .5rem 0; }
+  .output-box.rendered img { max-width: 100%; border-radius: 6px; }
+
+  .spinner { display: inline-block; width: 1rem; height: 1rem; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .6s linear infinite; vertical-align: middle; margin-right: .4rem; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+  <h1>Anydoc</h1>
+  <p class="subtitle">Drop a file to convert it to Markdown</p>
+
+  <div class="drop-zone" id="dropZone">
+    <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.docm,.ppt,.pps,.pot,.pptx,.pptm,.ppsx,.ppsm,.xls,.xlsx,.xlsm,.xlsb,.odt,.ods,.odp,.rtf,.epub,.csv">
+    <div class="icon">📄</div>
+    <p>Drag & drop or click to select</p>
+    <div class="formats">PDF · Word · PowerPoint · Excel · OpenDocument · RTF · EPUB · CSV</div>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <div class="output-wrap" id="outputWrap">
+    <div class="toolbar">
+      <span class="filename" id="fileName"></span>
+      <div class="actions">
+        <button class="btn" id="copyBtn">Copy MD</button>
+        <button class="btn" id="downloadBtn">Download .md</button>
+      </div>
+    </div>
+    <div class="tabs">
+      <div class="tab active" data-view="raw">Raw Markdown</div>
+      <div class="tab" data-view="rendered">Rendered</div>
+    </div>
+    <div class="output-box" id="outputBox"><pre id="rawOutput"></pre></div>
+  </div>
+
+<script>
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const status = document.getElementById('status');
+const outputWrap = document.getElementById('outputWrap');
+const outputBox = document.getElementById('outputBox');
+const rawOutput = document.getElementById('rawOutput');
+const fileName = document.getElementById('fileName');
+
+let currentMarkdown = '';
+let currentFilename = '';
+let currentView = 'raw';
+
+['dragenter','dragover'].forEach(e => dropZone.addEventListener(e, ev => { ev.preventDefault(); dropZone.classList.add('drag-over'); }));
+['dragleave','drop'].forEach(e => dropZone.addEventListener(e, ev => { ev.preventDefault(); dropZone.classList.remove('drag-over'); }));
+dropZone.addEventListener('drop', ev => { if (ev.dataTransfer.files.length) convert(ev.dataTransfer.files[0]); });
+fileInput.addEventListener('change', () => { if (fileInput.files.length) convert(fileInput.files[0]); });
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentView = tab.dataset.view;
+    renderOutput();
+  });
+});
+
+document.getElementById('copyBtn').addEventListener('click', () => {
+  navigator.clipboard.writeText(currentMarkdown).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy MD', 1500);
+  });
+});
+
+document.getElementById('downloadBtn').addEventListener('click', () => {
+  const blob = new Blob([currentMarkdown], { type: 'text/markdown' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = currentFilename.replace(/\.[^.]+$/, '') + '.md';
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+async function convert(file) {
+  status.className = 'status';
+  status.innerHTML = '<span class="spinner"></span>Converting ' + file.name + '…';
+  outputWrap.classList.remove('visible');
+
+  const form = new FormData();
+  form.append('file', file);
+
+  try {
+    const res = await fetch('/convert', { method: 'POST', body: form });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Conversion failed');
+
+    currentMarkdown = data.markdown;
+    currentFilename = data.filename;
+    fileName.textContent = data.filename;
+    renderOutput();
+    outputWrap.classList.add('visible');
+    status.className = 'status ok';
+    status.textContent = 'Converted ' + file.name + ' (' + (currentMarkdown.length / 1024).toFixed(1) + ' KB markdown)';
+  } catch (err) {
+    status.className = 'status error';
+    status.textContent = 'Error: ' + err.message;
+  }
+  fileInput.value = '';
+}
+
+function isRtl(text) {
+  const sample = text.slice(0, 500);
+  const rtl = (sample.match(/[֐-׿؀-ۿ܀-ݏ]/g) || []).length;
+  const ltr = (sample.match(/[a-zA-Z]/g) || []).length;
+  return rtl > ltr;
+}
+
+function renderOutput() {
+  const rtl = isRtl(currentMarkdown);
+  if (currentView === 'raw') {
+    outputBox.className = 'output-box' + (rtl ? ' rtl' : '');
+    outputBox.innerHTML = '';
+    const pre = document.createElement('pre');
+    pre.textContent = currentMarkdown;
+    outputBox.appendChild(pre);
+  } else {
+    outputBox.className = 'output-box rendered' + (rtl ? ' rtl' : '');
+    outputBox.innerHTML = markdownToHtml(currentMarkdown);
+  }
+}
+
+function markdownToHtml(md) {
+  let html = md;
+  html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+  html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+  html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+  html = html.replace(/^\> (.+)$/gm, '<blockquote>$1</blockquote>');
+  html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
+  html = html.replace(/(<li>.*<\/li>\n?)+/g, m => '<ul>' + m + '</ul>');
+  html = html.replace(/\n{2,}/g, '</p><p>');
+  html = '<p>' + html + '</p>';
+  html = html.replace(/<p>\s*(<h[123]>)/g, '$1');
+  html = html.replace(/(<\/h[123]>)\s*<\/p>/g, '$1');
+  html = html.replace(/<p>\s*(<ul>)/g, '$1');
+  html = html.replace(/(<\/ul>)\s*<\/p>/g, '$1');
+  html = html.replace(/<p>\s*(<blockquote>)/g, '$1');
+  html = html.replace(/(<\/blockquote>)\s*<\/p>/g, '$1');
+  html = html.replace(/<p>\s*<\/p>/g, '');
+
+  // tables
+  html = html.replace(/(\|.+\|\n)+/g, block => {
+    const rows = block.trim().split('\n').filter(r => !/^\|[\s\-:]+\|$/.test(r));
+    if (rows.length === 0) return block;
+    let table = '<table>';
+    rows.forEach((row, i) => {
+      const cells = row.split('|').filter((_, ci) => ci > 0 && ci < row.split('|').length - 1).map(c => c.trim());
+      const tag = i === 0 ? 'th' : 'td';
+      table += '<tr>' + cells.map(c => `<${tag}>${c}</${tag}>`).join('') + '</tr>';
+    });
+    table += '</table>';
+    return table;
+  });
+
+  return html;
+}
+</script>
+</body>
+</html>
