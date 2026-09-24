@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>תיק השקעה אריאל</title>
+<meta name="description" content="מחקר עומק על השקעה בדירה באריאל לעשור 2026–2036">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --surface-2:#e9ede7; --ink:#152019; --ink-2:#46524a; --muted:#6c766f;
+  --rule:#d7ddd5; --grid:#e3e7e1; --accent:#2c4a35; --accent-soft:#dfe8e0;
+  --ariel:#eb6834; --nat:#2a78d6; --lev:#1baf7a; --other:#b3bab3; --s4:#eda100;
+  --neg:#e34948; --pos:#2a78d6; --warn:#b86e00;
+  --chip-r:#dbe8f7; --chip-r-ink:#1c4f8f; --chip-t:#f7e3d6; --chip-t-ink:#8a3a14; --chip-h:#e4e0f3; --chip-h-ink:#3f3490;
+  --pill-ok:#d9efe2; --pill-ok-ink:#1d6b3c; --pill-mid:#fbecc9; --pill-mid-ink:#7a5200; --pill-low:#f6dcdc; --pill-low-ink:#8f2424;
+  --display:"Frank Ruhl Libre", "David Libre", "Times New Roman", serif;
+  --body:"Assistant", "Segoe UI", "Arial Hebrew", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#111512; --surface:#191e1a; --surface-2:#222822; --ink:#eef2ec; --ink-2:#c3cbc4; --muted:#96a098;
+    --rule:#313932; --grid:#283029; --accent:#9cc3a4; --accent-soft:#233026;
+    --ariel:#d95926; --nat:#3987e5; --lev:#199e70; --other:#5b645c; --s4:#c98500;
+    --neg:#e66767; --pos:#3987e5; --warn:#e0a13a;
+    --chip-r:#1d3350; --chip-r-ink:#a9cbf5; --chip-t:#43281a; --chip-t-ink:#f2b996; --chip-h:#2c2750; --chip-h-ink:#c5bdf5;
+    --pill-ok:#183a26; --pill-ok-ink:#8fdcad; --pill-mid:#3d2f10; --pill-mid-ink:#f0c870; --pill-low:#421d1d; --pill-low-ink:#f3a3a3;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#111512; --surface:#191e1a; --surface-2:#222822; --ink:#eef2ec; --ink-2:#c3cbc4; --muted:#96a098;
+  --rule:#313932; --grid:#283029; --accent:#9cc3a4; --accent-soft:#233026;
+  --ariel:#d95926; --nat:#3987e5; --lev:#199e70; --other:#5b645c; --s4:#c98500;
+  --neg:#e66767; --pos:#3987e5; --warn:#e0a13a;
+  --chip-r:#1d3350; --chip-r-ink:#a9cbf5; --chip-t:#43281a; --chip-t-ink:#f2b996; --chip-h:#2c2750; --chip-h-ink:#c5bdf5;
+  --pill-ok:#183a26; --pill-ok-ink:#8fdcad; --pill-mid:#3d2f10; --pill-mid-ink:#f0c870; --pill-low:#421d1d; --pill-low-ink:#f3a3a3;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;margin:0;padding-inline:16px;padding-block:0 64px;font-variant-numeric:tabular-nums}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px}
+@media (max-width:960px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-block:40px 20px;max-height:100vh;overflow:auto}
+nav.toc h2{font-family:var(--body);font-size:12px;letter-spacing:.08em;color:var(--muted);margin:0 0 10px;font-weight:700}
+nav.toc a{display:block;color:var(--ink-2);text-decoration:none;font-size:14.5px;padding:5px 10px;border-inline-start:2px solid var(--rule)}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--ink);border-color:var(--accent);outline:none}
+@media (max-width:960px){nav.toc{display:none}}
+main{min-width:0}
+header.hero{padding-block:48px 28px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:13px;letter-spacing:.06em;color:var(--muted);font-weight:700}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(38px,6vw,68px);line-height:1.05;margin:10px 0 16px;text-wrap:balance;letter-spacing:-.01em}
+h1 .hl{color:var(--ariel)}
+.lede{font-size:clamp(18px,2.1vw,21px);color:var(--ink-2);max-width:62ch;margin:0}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:14px;color:var(--muted)}
+h2.sec{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.4vw,38px);line-height:1.15;margin:0 0 6px;text-wrap:balance}
+h3{font-family:var(--body);font-weight:800;font-size:19px;margin:0 0 4px;text-wrap:balance}
+section.block{padding-block:48px 8px;border-bottom:1px solid var(--rule);scroll-margin-top:12px}
+.kicker{color:var(--ink-2);max-width:68ch;margin:0 0 24px}
+p{max-width:68ch}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.grid2,.grid3{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:20px 20px 16px;min-width:0}
+.panel .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.note{font-size:14px;color:var(--muted);margin:10px 0 0;max-width:none}
+.take{background:var(--accent-soft);border-radius:10px;padding:16px 18px;margin:20px 0 8px;max-width:none}
+.take strong{color:var(--accent)}
+/* reliability chips */
+.src{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 7px;border-radius:999px;vertical-align:2px;margin-inline-start:4px;white-space:nowrap}
+.src.r{background:var(--chip-r);color:var(--chip-r-ink)}
+.src.t{background:var(--chip-t);color:var(--chip-t-ink)}
+.src.h{background:var(--chip-h);color:var(--chip-h-ink)}
+.pill{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 10px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--pill-ok);color:var(--pill-ok-ink)}
+.pill.mid{background:var(--pill-mid);color:var(--pill-mid-ink)}
+.pill.low{background:var(--pill-low);color:var(--pill-low-ink)}
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden;margin-top:28px}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:var(--surface);padding:16px 18px}
+.kpi .l{font-size:13.5px;color:var(--muted);font-weight:600}
+.kpi .v{font-size:32px;font-weight:800;line-height:1.15;margin-top:4px;font-variant-numeric:proportional-nums}
+.kpi .d{font-size:13.5px;color:var(--ink-2);margin-top:2px}
+/* verdict table */
+.verdict{width:100%;border-collapse:collapse;font-size:15.5px}
+.verdict th,.verdict td{text-align:start;padding:11px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+.verdict th{width:22%;font-weight:700;color:var(--ink)}
+.tbl-wrap{overflow-x:auto}
+table.data{border-collapse:collapse;width:100%;font-size:14.5px}
+table.data th,table.data td{padding:7px 10px;border-bottom:1px solid var(--rule);text-align:start;white-space:nowrap}
+table.data th{color:var(--muted);font-weight:700;font-size:13px}
+table.data tr.me td{font-weight:700}
+details.tv{margin-top:10px}
+details.tv summary{cursor:pointer;font-size:13.5px;color:var(--muted);font-weight:600}
+details.tv summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* HTML bars */
+.hb{display:grid;grid-template-columns:minmax(84px,max-content) minmax(0,1fr);gap:8px 12px;align-items:center}
+.hb .lab{font-size:14.5px;color:var(--ink-2);white-space:nowrap}
+.hb .lab.me{color:var(--ink);font-weight:800}
+.hb .track{display:flex;align-items:center;gap:8px;min-width:0}
+.hb .bar{height:18px;border-radius:0 4px 4px 0;min-width:2px;flex:none}
+[dir="rtl"] .hb .bar{border-radius:4px 0 0 4px}
+.hb .val{font-size:14px;color:var(--ink);font-weight:600;white-space:nowrap}
+.hb .grp{grid-column:1/-1;font-size:13px;color:var(--muted);font-weight:700;margin-top:6px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:var(--ink-2);margin:0 0 12px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:6px;vertical-align:-1px}
+.legend i.ln{height:2px;width:16px;border-radius:0;vertical-align:3px}
+.legend i.dash{background:none!important;border-top:2px dashed currentColor;height:0;width:16px;vertical-align:3px}
+.chart{width:100%;min-height:120px;position:relative}
+.chart svg{display:block;overflow:visible}
+.chart text{font-family:var(--body);fill:var(--muted);font-size:12.5px}
+.chart text.lbl{fill:var(--ink);font-weight:700;font-size:13px}
+.chart text.lbl2{fill:var(--ink-2);font-size:12.5px}
+.chart .gl{stroke:var(--grid);stroke-width:1}
+.chart .axis{stroke:var(--rule);stroke-width:1}
+[data-tip]{cursor:default}
+#tip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13.5px;line-height:1.45;padding:7px 10px;border-radius:6px;max-width:260px;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+/* stacked */
+.stack{display:flex;gap:2px;height:30px;border-radius:5px;overflow:hidden}
+.stack > div{height:100%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;min-width:0}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.card p{margin:0;font-size:15px;color:var(--ink-2)}
+.card .imp{font-size:14.5px;color:var(--ink);border-top:1px dashed var(--rule);padding-top:8px;margin-top:auto}
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;inset-inline-start:74px;top:6px;bottom:6px;width:1px;background:var(--rule)}
+.tl li{display:grid;grid-template-columns:62px 26px minmax(0,1fr);align-items:start;padding-block:6px}
+.tl .y{font-weight:800;font-size:14.5px;text-align:end}
+.tl .dot{width:11px;height:11px;border-radius:50%;margin:7px auto 0;box-shadow:0 0 0 3px var(--bg);position:relative;z-index:1}
+.tl .tx{font-size:15px;color:var(--ink-2)}
+.tl .tx b{color:var(--ink)}
+.tl li.future .y,.tl li.future .tx{color:var(--muted)}
+/* phases */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+@media (max-width:760px){.phases{grid-template-columns:minmax(0,1fr)}}
+.phase{background:var(--surface);padding:16px 18px;border-inline-start:1px solid var(--rule)}
+.phase:first-child{border-inline-start:0}
+@media (max-width:760px){.phase{border-inline-start:0;border-top:1px solid var(--rule)}.phase:first-child{border-top:0}}
+.phase .yrs{font-size:13px;font-weight:800;color:var(--muted);letter-spacing:.04em}
+.phase .ttl{font-family:var(--display);font-size:22px;font-weight:700;margin:2px 0 6px}
+.phase p{font-size:15px;margin:0;color:var(--ink-2)}
+.meter{height:8px;border-radius:4px;background:var(--surface-2);margin:10px 0 4px;overflow:hidden}
+.meter > span{display:block;height:100%;border-radius:4px}
+/* calculator */
+.calc{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px}
+@media (max-width:860px){.calc{grid-template-columns:minmax(0,1fr)}}
+.field{display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:4px 12px;align-items:center;padding-block:8px;border-bottom:1px solid var(--rule)}
+.field label{font-size:15px;font-weight:600}
+.field .hint{grid-column:1/-1;font-size:12.5px;color:var(--muted)}
+.field input[type=number]{width:100%;font:inherit;font-size:15px;padding:6px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);text-align:end}
+.field input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}
+.field input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+button.pbtn{font:inherit;font-size:14px;font-weight:700;padding:6px 14px;border-radius:999px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer}
+button.pbtn:hover{border-color:var(--accent)}
+button.pbtn[aria-pressed="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+button.pbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.out{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px}
+.out .big{font-size:52px;font-weight:800;line-height:1;font-variant-numeric:proportional-nums}
+.out .row{display:flex;justify-content:space-between;gap:10px;padding-block:7px;border-bottom:1px solid var(--rule);font-size:15px}
+.out .row:last-child{border-bottom:0}
+.out .row b{font-weight:700}
+.neg{color:var(--neg)} .pos{color:var(--pos)}
+/* checklist */
+.check{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.check label{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:10px 12px;cursor:pointer;font-size:15px}
+.check input{margin-top:5px;accent-color:var(--accent);width:16px;height:16px;flex:none}
+.check input:checked + span{color:var(--muted);text-decoration:line-through}
+.sources{columns:2;column-gap:28px;font-size:13.5px;padding-inline-start:18px}
+@media (max-width:760px){.sources{columns:1}}
+.sources li{break-inside:avoid;margin-bottom:6px;color:var(--ink-2)}
+.sources a{color:var(--accent);word-break:break-all}
+.disclaimer{font-size:14px;color:var(--muted);border:1px dashed var(--rule);border-radius:8px;padding:12px 14px;margin-top:18px;max-width:none}
+.bignum-row{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-end}
+.bignum .n{font-size:44px;font-weight:800;line-height:1;font-variant-numeric:proportional-nums}
+.bignum .c{font-size:14px;color:var(--muted);margin-top:4px}
+</style>
+</head>
+<body>
+
+<div id="tip" hidden></div>
+
+<div class="wrap" dir="rtl" lang="he">
+<nav class="toc" aria-label="תוכן">
+  <h2>תוכן</h2>
+  <a href="#verdict">השורה התחתונה</a>
+  <a href="#prices">מחירים</a>
+  <a href="#compare">השוואה בין ערים</a>
+  <a href="#rent">שכירות ותשואה</a>
+  <a href="#supply">היצע והסכם הגג</a>
+  <a href="#population">אוכלוסייה</a>
+  <a href="#anchors">עוגנים כלכליים</a>
+  <a href="#transport">תחבורה</a>
+  <a href="#security">ביטחון</a>
+  <a href="#politics">מדיניות ומשפט</a>
+  <a href="#macro">הקשר ארצי</a>
+  <a href="#model">מודל תשואה</a>
+  <a href="#calc">מחשבון</a>
+  <a href="#timeline">ציר זמן</a>
+  <a href="#trends">מגמות לעשור</a>
+  <a href="#action">המלצות</a>
+  <a href="#checklist">רשימת בדיקות</a>
+  <a href="#sources">מקורות</a>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">מחקר השקעה · אריאל, שומרון · 23 בספטמבר 2026</div>
+  <h1>אריאל: תשואה גבוהה, <span class="hl">צמיחה נמוכה</span></h1>
+  <p class="lede">חמישה צוותי מחקר בדקו את אריאל: תכנון והיצע, שמאות ותשואות, עוגנים כלכליים, ביטחון ומדיניות, תחבורה ואיכות חיים. הנתונים הוצלבו ביניהם, ועליהם נבנה מודל תשואה ל-10 שנים. <strong>המסקנה: התשואה הכוללת הצפויה דומה לממוצע הארצי, אבל הסיכון גבוה יותר והנכס קשה יותר למכירה.</strong></p>
+  <div class="meta-row">
+    <span>סוג המקור: <span class="src r">רשמי</span> נתון ממשלתי · <span class="src t">תקשורת</span> דיווח או הצהרה · <span class="src h">הערכה</span> חישוב או הערכה שלנו</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="l">מחיר דירת 4 חד׳, יד שנייה</div><div class="v">₪1.49M</div><div class="d">27% מתחת לממוצע הארצי <span class="src r">רשמי</span></div></div>
+    <div class="kpi"><div class="l">תשואת שכירות ברוטו</div><div class="v">3.6%</div><div class="d">בארץ: 2.85% <span class="src h">הערכה</span></div></div>
+    <div class="kpi"><div class="l">עליית מחיר שנתית 2021–2026</div><div class="v">0.9%</div><div class="d">בארץ: 4.9% (דירות 4 חד׳) <span class="src r">רשמי</span></div></div>
+    <div class="kpi"><div class="l">תשואה כוללת צפויה, 10 שנים</div><div class="v">~4.0%</div><div class="d">בארץ: ~4.2% · בלי משכנתא <span class="src h">הערכה</span></div></div>
+  </div>
+</header>
+
+<!-- VERDICT -->
+<section class="block" id="verdict">
+  <h2 class="sec">השורה התחתונה</h2>
+  <p class="kicker">תשובה קצרה לכל אחת מהשאלות. הפירוט, הגרפים והמקורות בהמשך.</p>
+  <div class="tbl-wrap">
+  <table class="verdict">
+    <tr><th>תשואת שכירות</th><td><b>3.1%–3.6% ברוטו</b> בדירות 3–4 חדרים, ואחרי הוצאות כ-2.8%–3.0% נטו. בארץ כ-2.85% ברוטו. <span class="src r">רשמי</span><span class="src h">הערכה</span></td></tr>
+    <tr><th>עליית ערך</th><td><b>חלשה.</b> בין 2021 ל-2026 אריאל עלתה פחות מכל 10 הערים שהשווינו. המחירים ירדו 5%–8% מהשיא של 2023–2024. <span class="src r">רשמי</span></td></tr>
+    <tr><th>תשואה כוללת ל-10 שנים</th><td><b>כ-4% בשנה בתרחיש הבסיס</b>, בטווח של 1.7%–6.2%. דירה ממוצעת בארץ מניבה כ-4.3% באותו מודל. <span class="src h">הערכה</span></td></tr>
+    <tr><th>משכנתא</th><td>ריבית של כ-4.75% גבוהה מהתשואה הנקייה (כ-3%). לכן בתרחיש הבסיס <b>משכנתא מקטינה את הרווח</b>.</td></tr>
+    <tr><th>מה יכול להעלות מחירים</th><td>הסכם הגג (ספטמבר 2026), החיבור לשפד״ן, מחלפים חדשים, מרכז מסחרי, והתפתחות אפשרית לכיוון ריבונות.</td></tr>
+    <tr><th>הסיכון העיקרי</th><td><b>ההיצע.</b> החלק מהסכם הגג שייבנה בפועל, בעיקר דירות מסובסדות, יתחרה בדירות יד שנייה. סיכונים נוספים: סנקציות בריטניה על גורמים שמממנים התנחלויות, קושי למכור מהר, ואריאל לא מקבלת זיכוי במס הכנסה.</td></tr>
+    <tr><th>מתאים ל</th><td>משקיע שמחפש הכנסה שוטפת ומחיר כניסה נמוך, מחזיק לפחות 10 שנים עם משכנתא נמוכה, ורואה בתשתיות ובריבונות בונוס אפשרי ולא הנחת בסיס.</td></tr>
+    <tr><th>לא מתאים ל</th><td>מי שמצפה לעליית ערך גבוהה מהממוצע הארצי, מי שלוקח משכנתא של 50%, ומי שעשוי להצטרך את הכסף בתוך 3–5 שנים.</td></tr>
+  </table>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section class="block" id="prices">
+  <h2 class="sec">מחירים: עלייה עד 2023–2024, ירידה מאז</h2>
+  <p class="kicker">שני מקורות בלתי תלויים מראים את אותה תמונה: עלייה חדה בשנים 2019–2023 וירידה מתונה מאז. אריאל נמכרת בהנחה של כ-26%–28% ביחס לממוצע הארצי.</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3>מחיר חציוני למ״ר, יד שנייה <span class="src h">הערכה</span></h3>
+      <p class="sub">מדגם של משרד תיווך מקומי, 2017–אוגוסט 2026 (בין 3 ל-22 עסקאות בשנה)</p>
+      <div class="chart" id="c-sqm" style="height:280px"></div>
+      <p class="note">המחיר למ״ר הגיע לשיא ב-2024 (17,333 ₪) והמחיר החציוני לדירה הגיע לשיא ב-2023 (1.665M). מאז ירד המחיר למ״ר בכ-8%. זה מדגם של משרד תיווך אחד, ולכן הוא מראה כיוון ולא נתון סטטיסטי מדויק.</p>
+    </div>
+    <div class="panel">
+      <h3>מחיר עסקה חציוני, כל גדלי הדירות <span class="src r">רשמי</span></h3>
+      <p class="sub">nadlan.gov.il, קוד יישוב 3570, באלפי ₪</p>
+      <div class="chart" id="c-official" style="height:280px"></div>
+      <p class="note">הנתונים לרוב הם מרבעון 1 של כל שנה. בשנים 2022–2023 חסר רבעון 1, ולכן מוצג רבעון 3. באתר חסרים רבעונים רבים לאריאל, כי יש מעט מדי עסקאות. זה בעצמו סימן לשוק קטן.</p>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <h3>אריאל מול הממוצע הארצי, לפי מספר חדרים <span class="src r">רשמי</span></h3>
+    <p class="sub">מחיר עסקה אחרון שפורסם, באלפי ₪</p>
+    <div class="legend"><span><i style="background:var(--ariel)"></i>אריאל</span><span><i style="background:var(--nat)"></i>ממוצע ארצי</span></div>
+    <div class="hb" id="c-rooms"></div>
+    <p class="note">דירה חדשה עולה כ-17,500–19,000 ₪ למ״ר, לעומת 15,500–16,000 ₪ ביד שנייה. <span class="src t">תקשורת</span></p>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="block" id="compare">
+  <h2 class="sec">השוואה בין ערים: תשואה גבוהה, צמיחה נמוכה</h2>
+  <p class="kicker">אריאל מול 8 ערים דומות ומול הממוצע הארצי, בדירות 4 חדרים. בגרף אריאל נמצאת לבד: התשואה הגבוהה ביותר והעלייה הנמוכה ביותר.</p>
+  <div class="panel">
+    <h3>תשואה ברוטו מול עליית מחיר שנתית, 2021–2026 <span class="src r">רשמי</span><span class="src h">הערכה</span></h3>
+    <p class="sub">הקווים המקווקווים הם הממוצע הארצי. ערים בצד ימין למעלה עדיפות בשני המדדים.</p>
+    <div class="chart" id="c-scatter" style="height:380px"></div>
+    <details class="tv"><summary>הצג טבלה</summary>
+      <div class="tbl-wrap"><table class="data" id="t-cities"></table></div>
+    </details>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="panel">
+      <h3>עליית מחיר שנתית, דירות 4 חד׳</h3>
+      <p class="sub">בערך 2021 עד 2026, לפי העסקה הראשונה והאחרונה באתר</p>
+      <div class="hb" id="c-cagr"></div>
+    </div>
+    <div class="panel">
+      <h3>תשואה ברוטו, דירות 4 חד׳</h3>
+      <p class="sub">שכר דירה שנתי חלקי מחיר</p>
+      <div class="hb" id="c-yield"></div>
+    </div>
+  </div>
+  <div class="take"><strong>המשמעות:</strong> כשתשואה גבוהה מגיעה יחד עם צמיחה נמוכה, בדרך כלל השוק מתמחר סיכון, וזו לא מציאה. אריאל מניבה כ-0.75 נקודת אחוז יותר בשנה מהממוצע הארצי, אבל עלתה כ-4 נקודות אחוז פחות בשנה בחמש השנים האחרונות. עפולה וכרמיאל מראות שאפשר לקבל תשואה דומה יחד עם עלייה חזקה יותר.</div>
+</section>
+
+<!-- RENT -->
+<section class="block" id="rent">
+  <h2 class="sec">שכירות ותשואה</h2>
+  <p class="kicker">שכר הדירה באריאל כמעט לא עלה בארבע השנים האחרונות. בארץ כולה הוא עלה ב-4.4% בשנה האחרונה.</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3>שכר דירה חודשי ממוצע, 12 חודשים <span class="src r">רשמי</span></h3>
+      <p class="sub">nadlan.gov.il, אוגוסט 2026, ב-₪</p>
+      <div class="hb" id="c-rent"></div>
+      <p class="note">4 חדרים: עלייה של כ-1.6% בשנה מאז 2022 (מ-4,200 ₪ ל-4,500 ₪). ממוצע ארצי לכל גדלי הדירות: 5,349 ₪.</p>
+    </div>
+    <div class="panel">
+      <h3>סטודנטים או משפחה? <span class="src h">הערכה</span></h3>
+      <p class="sub">דירת 4 חדרים (3 חדרי שינה), הכנסה חודשית</p>
+      <div class="hb" id="c-student"></div>
+      <p class="note">השכרה לסטודנטים (כ-1,300–1,700 ₪ לחדר) מכניסה בערך כמו משפחה, אבל הדירה נוטה לעמוד ריקה בקיץ והבלאי גבוה יותר. באוניברסיטה יש רק כ-1,600 מיטות במעונות לפי הנתון הרשמי. רוב הסטודנטים נוסעים מהבית.</p>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <h3>עלויות הקנייה: כמעט 3 שנות שכירות <span class="src r">רשמי</span></h3>
+    <p class="sub">דירה ב-1.5 מיליון ₪ כדירה נוספת</p>
+    <div class="stack" id="c-costs" aria-label="פירוק עלויות"></div>
+    <div class="legend" style="margin-top:10px" id="l-costs"></div>
+    <p class="note">מס רכישה על דירה נוספת הוא 8% מהשקל הראשון (עד 6.06 מיליון ₪). שכר דירה של כ-4,500 ₪ <b>פטור ממס</b> במסלול הפטור (תקרה של 5,654 ₪ בחודש ב-2026), אם זו ההכנסה היחידה שלך משכירות למגורים. במכירה משלמים מס שבח של 25% על הרווח הריאלי.</p>
+  </div>
+</section>
+
+<!-- SUPPLY -->
+<section class="block" id="supply">
+  <h2 class="sec">היצע: מה שהוכרז מול מה שנבנה</h2>
+  <p class="kicker">הסכם הגג דווח כחתום סופית ב-11 בספטמבר 2026: כ-18,000 דירות ויותר מ-3 מיליארד ₪ לתשתיות <span class="src t">תקשורת</span>. לא מצאנו נוסח רשמי של ההסכם. הגרף מראה כמה מהדירות נמצאות בכל שלב.</p>
+  <div class="panel">
+    <h3>משפך ההיצע: מהכרזה ועד דירה שנמכרה</h3>
+    <p class="sub">מספר דירות, בקנה מידה אחיד</p>
+    <div class="hb" id="c-funnel"></div>
+    <p class="note">הכוונה לתוכניות שהגיעו למכרז או להפקדה: אמירים (730 דירות) ושתי תוכניות פינוי-בינוי (473 ו-280). במכרז אוקטובר 2025 הוגשה הצעה אחת בלבד, ל-79 מתוך כ-440 דירות. בעשור שהסתיים ב-2023 נבנו כ-870 דירות.</p>
+  </div>
+  <div class="grid3" style="margin-top:20px">
+    <div class="panel">
+      <div class="bignum"><div class="n">35</div><div class="c">שנים עברו מאז שתוכנית אמירים/אריאל מערב אושרה (1991) ועד הנחת אבן הפינה (2026) <span class="src r">רשמי</span></div></div>
+    </div>
+    <div class="panel">
+      <div class="bignum"><div class="n">33%</div><div class="c">מהדירות בהסכמי הגג בארץ שווקו בפועל עד סוף 2020, לפי דוח מבקר המדינה (2021) <span class="src r">רשמי</span></div></div>
+    </div>
+    <div class="panel">
+      <div class="bignum"><div class="n" dir="ltr" style="text-align:right">×1.5–2.5</div><div class="c">פי כמה ההסכם מגדיל את מלאי הדירות בעיר, שמוערך היום ב-7,000–8,500 דירות <span class="src h">הערכה</span></div></div>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="panel">
+      <h3>מה ההסכם כולל, לפי הדיווחים <span class="src t">תקשורת</span></h3>
+      <ul style="margin:6px 0 0;padding-inline-start:20px;color:var(--ink-2);font-size:15px">
+        <li>כ-18,000 דירות. בדיווחים מאפריל עד אוגוסט 2026 דובר על 12,000.</li>
+        <li>יותר מ-3 מיליארד ₪ לתשתיות: מחלף אריאל, הכפלת מחלף ברקן, מחלף ברוכין, עוקף סלפית, כביש טבעת ומסוף אוטובוסים.</li>
+        <li>4 מרכזים מסחריים ואזורי תעסוקה של "מאות אלפי מ״ר".</li>
+        <li>פארקים, מתחם ספורט, אמפיתאטרון, חידוש העיר הוותיקה ומערכות ביטחון.</li>
+        <li>יעד של 80,000 תושבים, וחזון של 100,000.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>מה לא עקבי בדיווחים</h3>
+      <ul style="margin:6px 0 0;padding-inline-start:20px;color:var(--ink-2);font-size:15px">
+        <li>אין נוסח רשמי ואין פירוט של כמה דירות ייבנו בכל שנה. כל המספרים מגיעים מפוליטיקאים ומראש העיר.</li>
+        <li>מספר הדירות קפץ מ-12,000 ל-18,000 בתוך חודש, בלי הסבר.</li>
+        <li>כלי תקשורת שונים סותרים זה את זה בשאלה איזה הסכם גג ביהודה ושומרון היה הראשון.</li>
+        <li>יעד האוכלוסייה הוא 50, 80 או 100 אלף, תלוי מי מדבר.</li>
+        <li>החיבור לשפד״ן נחתם ב-25 באוגוסט 2026 בלי לוח זמנים. בלעדיו העיר לא יכולה לגדול.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="take"><strong>מה זה אומר על המחירים:</strong> גל גדול של דירות חדשות לפני 2030 לא סביר, כי הביצוע איטי והמכרזים נכשלו. אחרי 2030, אפילו 3,000–5,000 דירות, רובן מסובסדות וזולות ב-15%–35% מיד שנייה, יגבילו את עליית המחירים של דירות ישנות.</div>
+</section>
+
+<!-- POPULATION -->
+<section class="block" id="population">
+  <h2 class="sec">אוכלוסייה: מגמה מול יעד</h2>
+  <p class="kicker">אריאל גדלה בכ-2.1% בשנה <span class="src r">רשמי</span>. כדי להגיע ל-80,000 תושבים בתוך עשור, היא צריכה לגדול בכ-13.4% בשנה, פי 6 מהקצב היום.</p>
+  <div class="panel">
+    <h3>תושבים, 1990–2036</h3>
+    <div class="legend"><span><i class="ln" style="background:var(--ariel)"></i>בפועל, ולפי הקצב הנוכחי (2.1%)</span><span><i class="ln" style="background:var(--nat)"></i>יעד הסכם הגג (80 אלף)</span></div>
+    <div class="chart" id="c-pop" style="height:320px"></div>
+    <p class="note">הלמ״ס: 8,000 תושבים ב-1990, 22,191 ב-2024 ו-22,679 ביולי 2026. מאזן ההגירה של יהודה ושומרון כולם שלילי כבר כ-6 שנים, והצמיחה מגיעה מריבוי טבעי, בעיקר בערים החרדיות. כ-40% מתושבי אריאל עולים מברית המועצות לשעבר. העיר ברובה חילונית, ובאשכול חברתי-כלכלי 6 מתוך 10.</p>
+  </div>
+</section>
+
+<!-- ANCHORS -->
+<section class="block" id="anchors">
+  <h2 class="sec">עוגנים כלכליים: מה קיים ומה רק הוכרז</h2>
+  <p class="kicker">העוגן היחיד שכבר קיים בפועל הוא האוניברסיטה, והיא יציבה אבל לא צומחת. רוב שאר העוגנים עדיין בשלב ההכרזה.</p>
+  <div class="cards">
+    <div class="card"><div class="top"><h3>אוניברסיטת אריאל</h3><span class="pill ok">קיים</span></div>
+      <p>כ-13,500 סטודנטים לפי ות״ת, ו-17 אלף במספרים השיווקיים. התחזית של 20 אלף עד 2020 לא התממשה. כ-10% מהסטודנטים ערבים, ורובם נוסעים מהבית.</p>
+      <div class="imp">מקור הביקוש העיקרי לשכירות. יציב, בלי צמיחה משמעותית. <span class="src r">רשמי</span></div></div>
+    <div class="card"><div class="top"><h3>ביה״ס לרפואה ע״ש אדלסון</h3><span class="pill ok">קיים</span></div>
+      <p>כ-350 סטודנטים. המחזור הראשון (53) סיים ב-2024. מסלול של 6 שנים עם 80 סטודנטים בכל מחזור נפתח ב-2026/27.</p>
+      <div class="imp">עוד כ-400–500 שוכרים על פני 6 שנים. השפעה קטנה. <span class="src r">רשמי</span></div></div>
+    <div class="card"><div class="top"><h3>בית חולים</h3><span class="pill low">הכרזה בלבד</span></div>
+      <p>נתניהו הכריז עליו ב-18 באוגוסט 2026. אין החלטת ממשלה, אין תקציב ואין לוח זמנים. אריאל לא נמצאת בתוכנית משרד הבריאות ל-2050, שכוללת 8 בתי חולים חדשים.</p>
+      <div class="imp">להערכתנו, 15%–25% סיכוי לבית חולים עם מיון עד 2032. <span class="src h">הערכה</span></div>
+      <div class="meter" aria-hidden="true"><span style="width:20%;background:var(--ariel)"></span></div></div>
+    <div class="card"><div class="top"><h3>אזורי תעסוקה</h3><span class="pill mid">בתכנון</span></div>
+      <p>באזור התעשייה אריאל מערב (כ-850 דונם) פועלים יותר מ-40 מפעלים. הרחבה של 1,000 דונם להייטק אושרה רק בוועדה המקומית. פארק ברקן שייך למועצה האזורית שומרון, כך שהארנונה שלו לא מגיעה לאריאל.</p>
+      <div class="imp">אין מעסיק הייטק גדול. רוב התושבים נוסעים לעבודה בגוש דן. <span class="src r">רשמי</span><span class="src t">תקשורת</span></div></div>
+    <div class="card"><div class="top"><h3>זיכוי ממס הכנסה</h3><span class="pill low">אין</span></div>
+      <p>אריאל לא נכללת ברשימות 2025–2026, וגם לא ב-7% של "קו העימות המזרחי". שכנותיה ברקן, קרני שומרון, רבבה ועלי זהב כן נכללות.</p>
+      <div class="imp">עד כ-10,265 ₪ בשנה למפרנס שהשכנות מקבלות ואריאל לא. <span class="src r">רשמי</span></div></div>
+    <div class="card"><div class="top"><h3>עדיפות לאומית בדיור</h3><span class="pill ok">קיים</span></div>
+      <p>החלטת ממשלה 561, בתוקף לפחות עד 1 בנובמבר 2026. מעניקה הנחות במחיר הקרקע ברמ״י.</p>
+      <div class="imp">מוזילה את הדירות החדשות, שמתחרות בדירות יד שנייה. <span class="src r">רשמי</span></div></div>
+    <div class="card"><div class="top"><h3>מרכז מסחרי במערב העיר</h3><span class="pill mid">היתר ניתן</span></div>
+      <p>היתר בנייה מאוקטובר 2025: יוחננוף, סופר-פארם ראשון בעיר ושיבולת השרון, כ-11 אלף מ״ר מסחר ו-24 אלף מ״ר לוגיסטיקה. עוד אין מועד פתיחה.</p>
+      <div class="imp">משפר את איכות החיים. <span class="src t">תקשורת</span></div></div>
+    <div class="card"><div class="top"><h3>קופת העירייה</h3><span class="pill mid">מאוזנת, תלויה במענקים</span></div>
+      <p>תקציב 2023 היה 164.5 מיליון ₪ ומאוזן. הארנונה למגורים היא 44.58 ₪ למ״ר, לעומת 72.44 ₪ בערים דומות.</p>
+      <div class="imp">טוב לבעלי דירות, אבל ההכנסות מעסקים דלות. <span class="src r">רשמי</span></div>
+      <div class="meter" aria-hidden="true"><span style="width:61.5%;background:var(--nat)"></span></div></div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <h3>מספר הסטודנטים באוניברסיטה</h3>
+    <p class="sub">הנתון הרשמי לעומת המספר השיווקי</p>
+    <div class="hb" id="c-uni"></div>
+  </div>
+</section>
+
+<!-- TRANSPORT -->
+<section class="block" id="transport">
+  <h2 class="sec">תחבורה: צוואר הבקבוק הוא הכביש לתל אביב</h2>
+  <p class="kicker">אריאל תלויה ברכב פרטי. הבעיה המרכזית היא מחסום שער שומרון בכביש 5, ואין שום תוכנית ממומנת להרחיב אותו.</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3>זמן נסיעה מאריאל לתל אביב, בדקות</h3>
+      <p class="sub">הבר הכהה הוא הערכה לשעת השיא. החלק הבהיר הוא טווח ההערכה</p>
+      <div class="hb" id="c-commute"></div>
+      <p class="note">המועמדים לראשות העיר ב-2023 דיברו על 30–60 דקות המתנה במחסום. קו 286 לתל אביב יוצא 61 פעמים ביום. <span class="src t">תקשורת</span></p>
+    </div>
+    <div class="panel">
+      <h3>מה קיים ומה רק על הנייר</h3>
+      <table class="data">
+        <tr><th>פרויקט</th><th>מצב</th></tr>
+        <tr><td>נת״צ כביש 5, קסם–גלילות</td><td><span class="pill ok">הושלם 2025</span></td></tr>
+        <tr><td>רכבת ראש העין צפון (הקו המזרחי)</td><td><span class="pill ok">נפתח יוני 2026</span></td></tr>
+        <tr><td>הכפלת כביש 505, אריאל–תפוח</td><td><span class="pill mid">מכרז 2026</span></td></tr>
+        <tr><td>מחלף אריאל / ברוכין</td><td><span class="pill mid">בהסכם הגג, אין מועד</span></td></tr>
+        <tr><td>נתיב מהיר בכביש 5 (זיכיון פרטי)</td><td><span class="pill mid">במכרז</span></td></tr>
+        <tr><td>הרחבת מחסום שער שומרון</td><td><span class="pill low">לא נמצאה תוכנית</span></td></tr>
+        <tr><td>מטרונית השומרון</td><td><span class="pill low">אין תקציב ואין מועד</span></td></tr>
+      </table>
+      <p class="note">הרכבת הקלה הוכרזה ב-2018 עם יעד ל-2025, וב-2025 הוכרזה שוב "ללא תקציב וללא מועד". <b>לא כדאי לשלם עליה במחיר הדירה.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="block" id="security">
+  <h2 class="sec">ביטחון</h2>
+  <p class="kicker">מספר הפיגועים ביהודה ושומרון ירד לרמה הנמוכה ביותר מאז 2011. הסיכון באריאל מרוכז בצמתים ובכבישים, ופחות בתוך העיר.</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3>פיגועים ביהודה ושומרון בשנה <span class="src t">תקשורת</span></h3>
+      <p class="sub">נתוני מערכת הביטחון, דרך JPost, 13 בספטמבר 2026</p>
+      <div class="chart" id="c-sec" style="height:240px"></div>
+    </div>
+    <div class="panel">
+      <h3>אירועים בסמוך לאריאל</h3>
+      <table class="data">
+        <tr><th>תאריך</th><th>אירוע</th></tr>
+        <tr><td>02/2018</td><td>רצח הרב איתמר בן גל בצומת אריאל</td></tr>
+        <tr><td>03/2019</td><td>פיגוע משולב בצומת גיתי אבישר, 2 הרוגים</td></tr>
+        <tr><td>11/2022</td><td>פיגוע דריסה ודקירה באזור התעשייה, 3 הרוגים</td></tr>
+        <tr><td>08/2024</td><td>ניסיון דריסה בצומת אריאל</td></tr>
+        <tr><td>11/2024</td><td>ירי על אוטובוס, 8–10 פצועים</td></tr>
+        <tr><td>03/2025</td><td>ירי על נהג, פצוע</td></tr>
+        <tr><td>04/2025</td><td>מחבלת עם סכין נוטרלה בצומת</td></tr>
+      </table>
+      <p class="note">לאריאל אין גדר הפרדה ("אצבע אריאל" לא נבנתה), רק גדר היקפית. לא מצאנו מחקר שבודק כמה פיגועים משפיעים על הביקוש לדירות.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POLITICS -->
+<section class="block" id="politics">
+  <h2 class="sec">מדיניות ומשפט</h2>
+  <p class="kicker">אריאל נמצאת כ-20 ק״מ מזרחית לקו הירוק. מבין הגושים הגדולים היא השנויה ביותר במחלוקת. בחודש הקרוב צפויים שני אירועים שיכולים לשנות את התמונה: הבחירות ב-27 באוקטובר 2026, והסנקציות הבריטיות שייכנסו לתוקף במהלך 2027.</p>
+  <div class="panel">
+    <h3>תרחישים לעשור הקרוב <span class="src h">הערכה</span></h3>
+    <p class="sub">ההסתברויות הן הערכה שלנו, לא תחזית סטטיסטית</p>
+    <div class="stack" id="c-pol"></div>
+    <div class="tbl-wrap" style="margin-top:14px">
+    <table class="data" id="t-pol"></table>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="panel">
+      <h3>הלחץ הבינלאומי עולה <span class="src t">תקשורת</span></h3>
+      <ul style="margin:6px 0 0;padding-inline-start:20px;color:var(--ink-2);font-size:15px">
+        <li><b>8 בספטמבר 2026:</b> בריטניה, צרפת וקנדה אסרו ייבוא ממוצרי התנחלויות. בריטניה הכריזה על סנקציות נגד מי שנותן <b>מימון ושירותי נדל״ן</b> להרחבת התנחלויות, צפוי להיכנס לתוקף בתוך 6–9 חודשים.</li>
+        <li>אירלנד: חוק שאוסר ייבוא ממוצרי התנחלויות נכנס לתוקף ביולי 2026.</li>
+        <li>רשימת החברות של האו״ם כוללת בנקים ישראליים. קרנות פנסיה נורבגיות מכרו את ההחזקות בהם.</li>
+        <li>ארה״ב: טראמפ הודיע "I will not allow" לגבי סיפוח רשמי, אבל ארה״ב גם מתנגדת לסנקציות.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>מה אתה קונה בפועל <span class="src r">רשמי</span></h3>
+      <ul style="margin:6px 0 0;padding-inline-start:20px;color:var(--ink-2);font-size:15px">
+        <li><b>אין רישום בטאבו.</b> הקרקע היא אדמת מדינה שמנהל הממונה על הרכוש הממשלתי, והזכויות רשומות במנהל האזרחי או בחברה משכנת.</li>
+        <li>לא תמיד אפשר לרשום הערת אזהרה. חברות משכנות גובות עמלות לא מפוקחות, עד כ-5,000 ₪.</li>
+        <li>לפי אתרי יועצי משכנתאות, חלק מהבנקים נותנים עד כ-60% משווי הדירה. יש לבדוק מול הבנקים <span class="src t">תקשורת</span>.</li>
+        <li>בפברואר 2026 הוחלט על פתיחת פנקסי המקרקעין ועל רישום מקרקעין ראשון בשטח C: 244 מיליון ₪, 15% מהקרקע בתוך 5 שנים. לדירות קיימות באריאל זה לא ישנה משהו בקרוב.</li>
+        <li>מס רכישה ומס שבח ישראליים חלים גם כאן (סעיף 16א בחוק מיסוי מקרקעין).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <h3>מה קרה לאריאל בתוכניות שלום קודמות</h3>
+    <div class="tbl-wrap"><table class="data">
+      <tr><th>תוכנית</th><th>אריאל</th></tr>
+      <tr><td>יוזמת ז׳נבה, 2003</td><td><span class="pill low">מפונה</span></td></tr>
+      <tr><td>מתווה אולמרט, 2008</td><td><span class="pill ok">בצד הישראלי</span> אבו מאזן התנגד</td></tr>
+      <tr><td>תוכנית טראמפ, 2020</td><td><span class="pill ok">בריבונות ישראלית</span></td></tr>
+      <tr><td>החלטות ישראל, 2025–2026</td><td><span class="pill mid">"ריבונות בפועל" בלי סיפוח רשמי</span></td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- MACRO -->
+<section class="block" id="macro">
+  <h2 class="sec">הקשר ארצי: שוק חלש, ריבית יורדת</h2>
+  <p class="kicker">אריאל לא פועלת לבד. מחירי הדירות בארץ ירדו כשנה, מלאי הדירות החדשות שלא נמכרו הגיע לשיא, ובנק ישראל מוריד את הריבית.</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3>ריבית בנק ישראל, 2026 <span class="src r">רשמי</span></h3>
+      <div class="chart" id="c-rate" style="height:220px"></div>
+      <p class="note">בנק ישראל צופה ריבית של כ-3% בעוד 12 חודשים ואינפלציה של 1.8% ב-2026. הריבית על משכנתא היא בערך הפריים ועוד 1.5%, כלומר כ-4.75%.</p>
+    </div>
+    <div class="panel">
+      <div class="bignum-row">
+        <div class="bignum"><div class="n">86,090</div><div class="c">דירות חדשות שלא נמכרו, דצמבר 2025. שיא של כל הזמנים <span class="src r">רשמי</span></div></div>
+        <div class="bignum"><div class="n" dir="ltr" style="text-align:right">−1.5%</div><div class="c">שינוי במחירי הדירות בארץ בשנה, יוני 2026 <span class="src r">רשמי</span></div></div>
+        <div class="bignum"><div class="n" dir="ltr" style="text-align:right">+64%</div><div class="c">גידול ברכישות משקיעים בשנה, יוני 2026 <span class="src r">רשמי</span></div></div>
+      </div>
+      <p class="note" style="margin-top:16px">ההערכה המקובלת היא התייצבות מהמחצית השנייה של 2026, ואחר כך עלייה של 2%–4% בשנה בשנים 2027–2030. לאריאל אנחנו מניחים עלייה נמוכה ב-1–2 נקודות אחוז מהארץ, על סמך הביצועים בשנים 2021–2026. <span class="src h">הערכה</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- MODEL -->
+<section class="block" id="model">
+  <h2 class="sec">מודל תשואה ל-10 שנים</h2>
+  <p class="kicker">תשואה שנתית כוללת (IRR) לדירת 4 חדרים ב-1.494 מיליון ₪ עם שכר דירה של 4,500 ₪, לעומת דירה ממוצעת בארץ (2.03 מיליון ₪, 4,825 ₪). המודל כולל מס רכישה 8%, עלויות נלוות 2%, חודש ריק בשנה, הוצאות שוטפות של 12% ומס שבח 25% על הרווח הריאלי.</p>
+  <div class="panel">
+    <h3>תשואה שנתית כוללת לפי תרחיש</h3>
+    <div class="legend"><span><i style="background:var(--ariel)"></i>אריאל, בלי משכנתא</span><span><i style="background:var(--lev)"></i>אריאל, 50% משכנתא בריבית 4.75%</span><span><i style="background:var(--nat)"></i>ממוצע ארצי, בלי משכנתא</span></div>
+    <div class="chart" id="c-irr" style="height:300px"></div>
+    <div class="tbl-wrap"><table class="data" style="margin-top:8px">
+      <tr><th>תרחיש</th><th>הסתברות</th><th>עליית מחיר באריאל</th><th>עליית שכר דירה</th><th>הארץ</th></tr>
+      <tr><td>שלילי: יותר מדי היצע או זעזוע מדיני</td><td>25%</td><td>0% בשנה</td><td>1%</td><td>2%</td></tr>
+      <tr><td>בסיס: הארץ פחות נקודת אחוז</td><td>50%</td><td>2.5% בשנה</td><td>2%</td><td>3.5%</td></tr>
+      <tr><td>חיובי: תשתיות וריבונות</td><td>25%</td><td>5.5% בשנה</td><td>3%</td><td>4.5%</td></tr>
+    </table></div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <h3>כמה אריאל צריכה לעלות כדי שההשקעה תשתלם?</h3>
+    <p class="sub">תשואה שנתית כוללת לפי קצב עליית המחיר (בלי משכנתא, שכר דירה עולה 2% בשנה)</p>
+    <div class="chart" id="c-be" style="height:300px"></div>
+    <p class="note">כדי להרוויח כ-4% בשנה, בערך כמו אג״ח ממשלתי ארוך, אריאל צריכה לעלות כ-2.5% בשנה. בחמש השנים האחרונות היא עלתה 1.6% בשנה. <span class="src h">הערכה</span></p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="block" id="calc">
+  <h2 class="sec">מחשבון: בדוק דירה ספציפית</h2>
+  <p class="kicker">אפשר לשנות כל הנחה. החישוב זהה למודל שלמעלה.</p>
+  <div class="calc">
+    <div>
+      <div class="presets" role="group" aria-label="תרחישים מוכנים">
+        <button class="pbtn" data-p="bear" aria-pressed="false">שלילי</button>
+        <button class="pbtn" data-p="base" aria-pressed="true">בסיס</button>
+        <button class="pbtn" data-p="bull" aria-pressed="false">חיובי</button>
+      </div>
+      <div class="field"><label for="f-price">מחיר הדירה (₪)</label><input type="number" id="f-price" value="1494000" step="10000" min="300000"></div>
+      <div class="field"><label for="f-rent">שכר דירה חודשי (₪)</label><input type="number" id="f-rent" value="4500" step="100" min="0"></div>
+      <div class="field"><label for="f-g">עליית מחיר שנתית (%)</label><input type="number" id="f-g" value="2.5" step="0.5"><input type="range" dir="ltr" id="r-g" min="-3" max="9" step="0.5" value="2.5" aria-label="עליית מחיר שנתית"><div class="hint">אריאל 2021–2026: 1.6% · הארץ: 5.8%</div></div>
+      <div class="field"><label for="f-gr">עליית שכר דירה שנתית (%)</label><input type="number" id="f-gr" value="2" step="0.5"></div>
+      <div class="field"><label for="f-ltv">שיעור משכנתא (%)</label><input type="number" id="f-ltv" value="0" step="5" min="0" max="75"><input type="range" dir="ltr" id="r-ltv" min="0" max="50" step="5" value="0" aria-label="שיעור משכנתא"><div class="hint">לדירה להשקעה בנק ישראל מאפשר עד 50%</div></div>
+      <div class="field"><label for="f-rate">ריבית משכנתא (%)</label><input type="number" id="f-rate" value="4.75" step="0.25"></div>
+      <div class="field"><label for="f-years">שנות החזקה</label><input type="number" id="f-years" value="10" step="1" min="2" max="30"></div>
+    </div>
+    <div class="out" aria-live="polite">
+      <div class="l" style="font-size:14px;color:var(--muted);font-weight:600">תשואה שנתית כוללת (IRR) על ההון העצמי</div>
+      <div class="big" id="o-irr">—</div>
+      <div style="font-size:14px;color:var(--ink-2);margin:6px 0 14px" id="o-cmp"></div>
+      <div class="row"><span>הון עצמי כולל עלויות</span><b id="o-eq">—</b></div>
+      <div class="row"><span>מס רכישה (8%)</span><b id="o-tax">—</b></div>
+      <div class="row"><span>תשואה ברוטו בשנה הראשונה</span><b id="o-gy">—</b></div>
+      <div class="row"><span>תזרים חודשי בשנה הראשונה, אחרי משכנתא</span><b id="o-cf">—</b></div>
+      <div class="row"><span>שווי הדירה בסוף התקופה</span><b id="o-sale">—</b></div>
+      <div class="row"><span>מס שבח משוער</span><b id="o-shevach">—</b></div>
+      <div class="row"><span>רווח נקי מצטבר</span><b id="o-profit">—</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="block" id="timeline">
+  <h2 class="sec">ציר זמן</h2>
+  <p class="kicker">35 שנים של תוכניות, ומה שיקרה בחודשים הקרובים.</p>
+  <div class="legend"><span><i style="background:var(--nat)"></i>תכנון ובנייה</span><span><i style="background:var(--ariel)"></i>מדיניות וחקיקה</span><span><i style="background:var(--lev)"></i>מוסדות ותשתיות</span><span><i style="background:var(--neg)"></i>ביטחון</span></div>
+  <ul class="tl" id="tl"></ul>
+</section>
+
+<!-- TRENDS -->
+<section class="block" id="trends">
+  <h2 class="sec">מה צפוי בעשור הקרוב</h2>
+  <p class="kicker">שלושה שלבים, לפי ההערכה שלנו. הפס מתחת לכל שלב מראה עד כמה שלב זה צפוי לתמוך בעליית מחירים. <span class="src h">הערכה</span></p>
+  <div class="phases">
+    <div class="phase"><div class="yrs">2026–2028</div><div class="ttl">שוק חלש</div>
+      <p>המחירים בארץ יורדים, יש מלאי שיא של דירות חדשות, והריבית יורדת. באריאל המחירים כבר ירדו 5%–8% מהשיא. <b>אם קונים, זה זמן סביר.</b></p>
+      <div class="meter"><span style="width:35%;background:var(--nat)"></span></div></div>
+    <div class="phase"><div class="yrs">2027–2030</div><div class="ttl">בניית התשתיות</div>
+      <p>מחלפים, חיבור לשפד״ן ומרכז מסחרי. הציפיות עולות לפני שמגיעות הדירות החדשות. <b>הסיכוי הטוב ביותר לעליית מחירים.</b></p>
+      <div class="meter"><span style="width:75%;background:var(--nat)"></span></div></div>
+    <div class="phase"><div class="yrs">2030–2036</div><div class="ttl">הרבה דירות חדשות</div>
+      <p>דירות מסובסדות מהסכם הגג נכנסות לשוק. דירות יד שנייה ישנות נפגעות יותר מדירות חדשות. עדיף בניין חדש או בניין שמיועד לפינוי-בינוי.</p>
+      <div class="meter"><span style="width:30%;background:var(--nat)"></span></div></div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="panel"><h3>אילו דירות יחזיקו ערך טוב יותר</h3>
+      <ul style="margin:6px 0 0;padding-inline-start:20px;color:var(--ink-2);font-size:15px">
+        <li><b>קרוב לאוניברסיטה:</b> ביקוש יציב לשכירות.</li>
+        <li><b>3–4 חדרים:</b> קל יותר למכור.</li>
+        <li><b>5 חדרים וקוטג׳ים:</b> עלו 5.2% בשנה, אבל על סמך מעט עסקאות.</li>
+        <li><b>בניין עם מעלית או מיועד לפינוי-בינוי:</b> מוגן יותר מפני התחרות של דירות חדשות.</li>
+      </ul></div>
+    <div class="panel"><h3>אירועים שיכולים לשנות את הכול</h3>
+      <ul style="margin:6px 0 0;padding-inline-start:20px;color:var(--ink-2);font-size:15px">
+        <li>הבחירות ב-27 באוקטובר 2026: יקבעו באיזה קצב יבוצע הסכם הגג.</li>
+        <li>הסנקציות הבריטיות על מימון (2027): עלולות להשפיע על זמינות המשכנתאות.</li>
+        <li>הכללה ברשימת היישובים שמקבלים זיכוי במס הכנסה: תשפר את מעמד העיר מול השכנות.</li>
+        <li>החלת ריבונות רשמית או הסדר מדיני: אירועים לא צפויים, בשני הכיוונים.</li>
+      </ul></div>
+  </div>
+</section>
+
+<!-- ACTION -->
+<section class="block" id="action">
+  <h2 class="sec">אם קונים: המלצות</h2>
+  <div class="grid3">
+    <div class="panel"><h3>מה לקנות</h3><p style="margin:0;font-size:15px;color:var(--ink-2)">3–4 חדרים ליד האוניברסיטה או במרכז העיר, בבניין עם מעלית. מחיר יעד: <b>14,500–15,500 ₪ למ״ר</b>. אפשר להתמקח חזק, כי יש מעט קונים.</p></div>
+    <div class="panel"><h3>איך לממן</h3><p style="margin:0;font-size:15px;color:var(--ink-2)">משכנתא נמוכה או בלי משכנתא. לפני המשא ומתן, כדאי לקבל אישור עקרוני משלושה בנקים לפחות, כי חלקם מגבילים מימון ביהודה ושומרון.</p></div>
+    <div class="panel"><h3>לכמה זמן</h3><p style="margin:0;font-size:15px;color:var(--ink-2)">לפחות 10 שנים. לא לקנות אם ייתכן שתצטרך את הכסף בתוך 3–5 שנים: מוכרים בעיר כ-120–200 דירות יד שנייה בשנה.</p></div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <h3>חלופות להשוואה</h3>
+    <div class="tbl-wrap"><table class="data">
+      <tr><th>מטרה</th><th>ערים</th><th>למה</th></tr>
+      <tr><td>תשואה דומה ועלייה חזקה יותר</td><td>עפולה, כרמיאל</td><td>תשואה של 3.0%–3.5%, ועפולה עלתה 9.9% בשנה</td></tr>
+      <tr><td>סיכון נמוך יותר</td><td>ראש העין, אלעד</td><td>קרובות לגוש דן, עם טאבו, והן עלו 2.5%–5.9% בשנה</td></tr>
+      <tr><td>נשאר ביהודה ושומרון, קל יותר למכור</td><td>מעלה אדומים</td><td>עלתה 3.6% בשנה ויש בה יותר עסקאות</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="block" id="checklist">
+  <h2 class="sec">רשימת בדיקות לפני עסקה</h2>
+  <p class="kicker">הסימונים נשמרים בדפדפן שלך.</p>
+  <div class="grid2">
+    <div><h3 style="margin-bottom:10px">לפני שחותמים</h3><ul class="check" id="chk1"></ul></div>
+    <div><h3 style="margin-bottom:10px">מה לעקוב אחריו</h3><ul class="check" id="chk2"></ul></div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="block" id="sources" style="border-bottom:0">
+  <h2 class="sec">מקורות ומגבלות</h2>
+  <p class="kicker">מה לא הצלחנו להשיג: מספר העסקאות הרשמי (האתר חסום ב-reCAPTCHA), התחלות בנייה לפי יישוב, מספר הדירות הרשמי בעיר, נוסח הסכם הגג, ואחוז הסטודנטים שגרים באריאל. חלק מהמקורות מוטים פוליטית משני הצדדים (שלום עכשיו, בצלם, ערוץ 14, ערוץ 7). השתמשנו בהם בעיקר לעובדות שאפשר לבדוק: מספרי תוכניות, תאריכים וכמויות.</p>
+  <ol class="sources" id="src-list"></ol>
+  <p class="disclaimer">זה מחקר ולא ייעוץ השקעות. לפני עסקה צריך עורך דין שמכיר מקרקעין ביהודה ושומרון, אישור עקרוני למשכנתא ממספר בנקים וחוות דעת של שמאי.</p>
+</section>
+</main>
+</div>
+
+<script>
+(function(){
+const $ = s => document.querySelector(s);
+const NS = "http://www.w3.org/2000/svg";
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = (n, d=0) => n.toLocaleString("he-IL",{minimumFractionDigits:d,maximumFractionDigits:d});
+const ils = n => "₪" + fmt(Math.round(n));
+const setVal = (node, t) => { if (!/[\u0590-\u05FF]/.test(t)) { node.dir="ltr"; node.textContent=t; } else { node.innerHTML = t.replace(/([~₪]?[\d][\d,.]*[%K]?–[\d][\d,.]*[%K]?|~[\d][\d,.]*)/g,'<span dir="ltr">$1</span>'); } };
+
+/* ---------- tooltip ---------- */
+const tip = $("#tip");
+function showTip(e, t){ tip.innerHTML = t; tip.hidden = false; moveTip(e); }
+function moveTip(e){
+  const pad=14, w=tip.offsetWidth, h=tip.offsetHeight;
+  let x=e.clientX+pad, y=e.clientY+pad;
+  if (x+w>innerWidth-8) x=e.clientX-w-pad;
+  if (y+h>innerHeight-8) y=e.clientY-h-pad;
+  tip.style.left=Math.max(8,x)+"px"; tip.style.top=Math.max(8,y)+"px";
+}
+document.addEventListener("pointerover", e => { const t=e.target.closest("[data-tip]"); if(t) showTip(e,t.getAttribute("data-tip")); });
+document.addEventListener("pointermove", e => { if(!tip.hidden) moveTip(e); });
+document.addEventListener("pointerout", e => { const t=e.target.closest("[data-tip]"); if(t && !t.contains(e.relatedTarget)) tip.hidden=true; });
+document.addEventListener("scroll", ()=>{tip.hidden=true}, {passive:true});
+
+/* ---------- svg helpers ---------- */
+function el(tag, attrs, parent){ const n=document.createElementNS(NS,tag); for(const k in attrs) n.setAttribute(k,attrs[k]); if(parent) parent.appendChild(n); return n; }
+function txt(parent, x, y, s, attrs={}){
+  if (/[\u0590-\u05FF]/.test(s)){ const a=attrs["text-anchor"]||"start"; attrs=Object.assign({},attrs,{direction:"rtl","text-anchor":a==="start"?"end":a==="end"?"start":"middle"}); }
+  const t=el("text",Object.assign({x,y},attrs),parent); t.textContent=s; return t; }
+function scale(d0,d1,r0,r1){ return v => r0 + (v-d0)/(d1-d0)*(r1-r0); }
+
+/* line chart */
+function lineChart(host, cfg){
+  const W = host.clientWidth, H = host.clientHeight;
+  host.innerHTML = "";
+  const m = Object.assign({t:18,r:24,b:30,l:52}, cfg.m||{});
+  const svg = el("svg",{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":cfg.aria||""},host);
+  svg.setAttribute("direction","ltr");
+  const x = scale(cfg.x[0],cfg.x[1],m.l,W-m.r), y = scale(cfg.y[0],cfg.y[1],H-m.b,m.t);
+  cfg.yTicks.forEach(v=>{ el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),class:"gl"},svg); txt(svg,m.l-8,y(v)+4,cfg.yFmt(v),{"text-anchor":"end"}); });
+  const xt = cfg.xTicks.filter((v,i,a)=> W>520 || i%(cfg.xSkip||2)===0 || i===a.length-1);
+  xt.forEach(v=>txt(svg,x(v),H-m.b+18,cfg.xFmt?cfg.xFmt(v):v,{"text-anchor":"middle"}));
+  (cfg.hlines||[]).forEach(h=>{ el("line",{x1:m.l,x2:W-m.r,y1:y(h.y),y2:y(h.y),stroke:css("--ink-2"),"stroke-width":1,"stroke-dasharray":"4 4"},svg); txt(svg,W-m.r,y(h.y)-6,h.label,{"text-anchor":"end",class:"lbl2"}); });
+  (cfg.vlines||[]).forEach(h=>{ el("line",{x1:x(h.x),x2:x(h.x),y1:m.t,y2:H-m.b,stroke:css("--ink-2"),"stroke-width":1,"stroke-dasharray":"4 4"},svg); txt(svg,x(h.x)+(h.side==="l"?-6:6),m.t+12+(h.dy||0),h.label,{"text-anchor":h.side==="l"?"end":"start",class:"lbl2"}); });
+  cfg.series.forEach(s=>{
+    const col = css(s.color);
+    if (s.area){ const d = s.pts.map((p,i)=>(i?"L":"M")+x(p[0])+","+y(p[1])).join("")+`L${x(s.pts[s.pts.length-1][0])},${y(cfg.y[0])}L${x(s.pts[0][0])},${y(cfg.y[0])}Z`; el("path",{d,fill:col,"fill-opacity":.1,stroke:"none"},svg); }
+    const segs = s.segs || [{from:0,to:s.pts.length-1,dash:false}];
+    segs.forEach(sg=>{
+      const d = s.pts.slice(sg.from,sg.to+1).map((p,i)=>(i?"L":"M")+x(p[0])+","+y(p[1])).join("");
+      el("path",{d,fill:"none",stroke:col,"stroke-width":2,"stroke-linejoin":"round","stroke-linecap":"round","stroke-dasharray":sg.dash?"6 5":"none"},svg);
+    });
+    s.pts.forEach((p,i)=>{
+      if (s.dots===false && i!==s.pts.length-1 && !(s.mark||[]).includes(i)) { }
+      else el("circle",{cx:x(p[0]),cy:y(p[1]),r:4.5,fill:col,stroke:css("--surface"),"stroke-width":2},svg);
+      const hit = el("circle",{cx:x(p[0]),cy:y(p[1]),r:14,fill:"transparent"},svg);
+      hit.setAttribute("data-tip", s.tip ? s.tip(p,i) : `${s.name}: ${cfg.yFmt(p[1])}`);
+    });
+    if (s.endLabel){ const p=s.pts[s.pts.length-1]; txt(svg, x(p[0])+(s.endDx||8), y(p[1])+(s.endDy||4), s.endLabel, {class:"lbl","text-anchor":s.endAnchor||"start"}); }
+    (s.labels||[]).forEach(L=>{ const p=s.pts[L.i]; txt(svg,x(p[0])+(L.dx||0),y(p[1])+(L.dy||-12),L.t,{class:"lbl","text-anchor":L.anchor||"middle"}); });
+  });
+}
+
+/* column chart (grouped, supports negatives) */
+function columnChart(host, cfg){
+  const W = host.clientWidth, H = host.clientHeight;
+  host.innerHTML="";
+  const m={t:22,r:12,b:34,l:44};
+  const svg=el("svg",{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":cfg.aria||""},host);
+  svg.setAttribute("direction","ltr");
+  const y=scale(cfg.y[0],cfg.y[1],H-m.b,m.t);
+  cfg.yTicks.forEach(v=>{ el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),class:v===0?"axis":"gl"},svg); txt(svg,m.l-8,y(v)+4,cfg.yFmt(v),{"text-anchor":"end"}); });
+  const gw=(W-m.l-m.r)/cfg.groups.length, n=cfg.series.length;
+  const bw=Math.min(24,(gw*0.7-(n-1)*2)/n);
+  cfg.groups.forEach((g,gi)=>{
+    const cx=m.l+gw*gi+gw/2, start=cx-(n*bw+(n-1)*2)/2;
+    txt(svg,cx,H-m.b+20,g,{"text-anchor":"middle",class:"lbl2"});
+    cfg.series.forEach((s,si)=>{
+      const v=s.values[gi], x0=start+si*(bw+2), y0=y(0), y1=y(v);
+      const top=Math.min(y0,y1), h=Math.max(1,Math.abs(y1-y0)), r=Math.min(4,h);
+      const up=v>=0;
+      const d = up ? `M${x0},${y0}V${top+r}Q${x0},${top} ${x0+r},${top}H${x0+bw-r}Q${x0+bw},${top} ${x0+bw},${top+r}V${y0}Z`
+                   : `M${x0},${y0}V${y0+h-r}Q${x0},${y0+h} ${x0+r},${y0+h}H${x0+bw-r}Q${x0+bw},${y0+h} ${x0+bw},${y0+h-r}V${y0}Z`;
+      const p=el("path",{d,fill:css(s.color)},svg);
+      p.setAttribute("data-tip",`${g} · ${s.name}: ${cfg.vFmt(v)}`);
+      if (cfg.labelAll!==false) txt(svg,x0+bw/2, up? top-6 : y0+h+14, cfg.vFmt(v),{"text-anchor":"middle",class:"lbl", style:"font-size:12px"});
+    });
+  });
+}
+
+/* scatter */
+function scatter(host, cfg){
+  const W=host.clientWidth, H=host.clientHeight;
+  host.innerHTML="";
+  const m={t:18,r:18,b:44,l:54};
+  const svg=el("svg",{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":cfg.aria||""},host);
+  svg.setAttribute("direction","ltr");
+  const x=scale(cfg.x[0],cfg.x[1],m.l,W-m.r), y=scale(cfg.y[0],cfg.y[1],H-m.b,m.t);
+  cfg.xTicks.forEach(v=>{ el("line",{x1:x(v),x2:x(v),y1:m.t,y2:H-m.b,class:"gl"},svg); txt(svg,x(v),H-m.b+18,v+"%",{"text-anchor":"middle"}); });
+  cfg.yTicks.forEach(v=>{ el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),class:"gl"},svg); txt(svg,m.l-8,y(v)+4,v.toFixed(1)+"%",{"text-anchor":"end"}); });
+  txt(svg,(m.l+W-m.r)/2,H-6,cfg.xLabel,{"text-anchor":"middle",class:"lbl2"});
+  const yl=txt(svg,14,(m.t+H-m.b)/2,cfg.yLabel,{"text-anchor":"middle",class:"lbl2",transform:`rotate(-90 14 ${(m.t+H-m.b)/2})`});
+  const ref=cfg.ref;
+  el("line",{x1:x(ref.x),x2:x(ref.x),y1:m.t,y2:H-m.b,stroke:css("--nat"),"stroke-width":1,"stroke-dasharray":"4 4"},svg);
+  el("line",{x1:m.l,x2:W-m.r,y1:y(ref.y),y2:y(ref.y),stroke:css("--nat"),"stroke-width":1,"stroke-dasharray":"4 4"},svg);
+  txt(svg,W-m.r-4,m.t+12,"תשואה גבוהה, צמיחה גבוהה",{"text-anchor":"end"});
+  txt(svg,m.l+4,m.t+12,"תשואה גבוהה, צמיחה נמוכה",{"text-anchor":"start"});
+  const narrow = W<520;
+  cfg.pts.forEach(p=>{
+    const col = p.me? css("--ariel") : p.nat? css("--nat") : css("--other");
+    const r = p.me? 7 : 5.5;
+    el("circle",{cx:x(p.x),cy:y(p.y),r,fill:col,stroke:css("--surface"),"stroke-width":2},svg);
+    const hit=el("circle",{cx:x(p.x),cy:y(p.y),r:14,fill:"transparent"},svg);
+    hit.setAttribute("data-tip",`<b>${p.n}</b><br>עליית מחיר: ${p.x}% בשנה<br>תשואה ברוטו: ${p.y.toFixed(2)}%<br>מחיר 4 חד׳: ₪${fmt(p.price)}K`);
+    if (!narrow || p.me || p.nat || p.always){
+      txt(svg,x(p.x)+(p.dx??9),y(p.y)+(p.dy??4),p.n,{class:p.me||p.nat?"lbl":"lbl2","text-anchor":p.anchor||"start"});
+    }
+  });
+}
+
+/* HTML horizontal bars */
+function hbars(host, rows, max, vfmt){
+  host.innerHTML="";
+  rows.forEach(r=>{
+    if (r.group){ const g=document.createElement("div"); g.className="grp"; g.textContent=r.group; host.appendChild(g); return; }
+    const l=document.createElement("div"); l.className="lab"+(r.me?" me":""); l.textContent=r.label; host.appendChild(l);
+    const t=document.createElement("div"); t.className="track";
+    (r.parts||[{v:r.v,c:r.c}]).forEach((pt,i)=>{
+      const b=document.createElement("div"); b.className="bar";
+      b.style.width=`calc(${Math.max(0,pt.v)/max*100}% - ${r.parts?0:40}px)`;
+      if (r.parts) b.style.width = (pt.v/max*78)+"%";
+      b.style.background=`var(${pt.c})`; if (pt.o) b.style.opacity=pt.o;
+      if (r.parts && i>0){ b.style.marginInlineStart="-8px"; }
+      b.setAttribute("data-tip", r.tip || `${r.label}: ${vfmt(r.v)}`);
+      t.appendChild(b);
+    });
+    const v=document.createElement("div"); v.className="val"; setVal(v, r.vt || vfmt(r.v)); t.appendChild(v);
+    host.appendChild(t);
+  });
+}
+/* simple bars where width is relative to container */
+function bars(host, rows, max, vfmt){
+  host.innerHTML="";
+  rows.forEach(r=>{
+    if (r.group){ const g=document.createElement("div"); g.className="grp"; g.textContent=r.group; host.appendChild(g); return; }
+    const l=document.createElement("div"); l.className="lab"+(r.me?" me":""); l.textContent=r.label; host.appendChild(l);
+    const t=document.createElement("div"); t.className="track";
+    const inner=document.createElement("div"); inner.style.cssText="flex:1;min-width:0;display:flex;align-items:center;gap:8px";
+    const b=document.createElement("div"); b.className="bar";
+    b.style.width=(Math.max(0,r.v)/max*82)+"%"; b.style.background=`var(${r.c})`;
+    if (r.o) b.style.opacity=r.o;
+    b.setAttribute("data-tip", r.tip || `${r.label}: ${vfmt(r.v)}`);
+    const v=document.createElement("div"); v.className="val"; setVal(v, r.vt || vfmt(r.v));
+    inner.appendChild(b); inner.appendChild(v); t.appendChild(inner); host.appendChild(t);
+  });
+}
+
+/* ---------- data ---------- */
+const cities = [
+  {n:"אריאל", price:1494, g:0.9, gall:1.6, rent:4500, y:3.61, me:true},
+  {n:"ממוצע ארצי", price:2029, g:4.9, gall:5.8, rent:4825, y:2.85, nat:true},
+  {n:"כרמיאל", price:1234, g:2.5, gall:4.0, rent:3575, y:3.48},
+  {n:"אלעד", price:2179, g:2.5, gall:3.7, rent:5750, y:3.17},
+  {n:"מעלה אדומים", price:2036, g:3.6, gall:1.9, rent:5150, y:3.04},
+  {n:"עפולה", price:1326, g:9.9, gall:6.8, rent:3300, y:2.99},
+  {n:"ראש העין", price:2258, g:5.9, gall:6.6, rent:5600, y:2.98},
+  {n:"כפר סבא", price:2754, g:5.9, gall:2.3, rent:6700, y:2.92},
+  {n:"בית שמש", price:2421, g:9.0, gall:9.7, rent:5500, y:2.73},
+  {n:"ביתר עילית", price:2683, g:10.2, gall:10.2, rent:4900, y:2.19},
+];
+const sqm = [[2017,10088,3],[2018,11860,7],[2019,12200,14],[2020,12967,17],[2021,14155,22],[2022,15735,15],[2023,16816,20],[2024,17333,13],[2025,15965,18],[2026,15882,15]];
+const official = [[2021,1453,"Q1"],[2022,1657.5,"Q3"],[2023,1667.2,"Q3"],[2024,1707.7,"Q1"],[2025,1606.4,"Q1"],[2026,1576.2,"Q1"]];
+
+/* IRR model (same as the report) */
+function irr(cfs){ let lo=-0.9, hi=1.0; for(let k=0;k<200;k++){ const m=(lo+hi)/2; let v=0; cfs.forEach((c,t)=>v+=c/Math.pow(1+m,t)); if(v>0) lo=m; else hi=m; } return (lo+hi)/2; }
+function model(o){
+  const {price,rentM,g,gr,years=10,ltv=0,rate=0.0475,cpi=0.02,opex=0.12,vac=1/12}=o;
+  const buyCost=price*0.10, debt=price*ltv;
+  const cfs=[-(price+buyCost-debt)];
+  const pay = ltv>0 ? debt*rate/(1-Math.pow(1+rate,-25)) : 0;
+  let bal=debt, cf1=0, sale=0, tax=0;
+  for(let y=1;y<=years;y++){
+    const rent=rentM*12*Math.pow(1+gr,y-1);
+    const noi=rent*(1-vac)-rent*opex;
+    const interest=bal*rate; bal-=(pay-interest);
+    let cf=noi-pay; if(y===1) cf1=cf;
+    if(y===years){ sale=price*Math.pow(1+g,years); const basis=(price+buyCost)*Math.pow(1+cpi,years); tax=0.25*Math.max(0,sale-basis); cf+=sale*0.98-tax-bal; }
+    cfs.push(cf);
+  }
+  return {irr:irr(cfs), equity:-cfs[0], cf1, sale, tax, profit:cfs.reduce((a,b)=>a+b,0), buyTax:price*0.08, gy:rentM*12/price};
+}
+
+/* ---------- render ---------- */
+function renderAll(){
+  lineChart($("#c-sqm"),{
+    aria:"מחיר חציוני למ״ר באריאל 2017–2026",
+    x:[2016.6,2026.4], y:[8000,18000], yTicks:[8000,10000,12000,14000,16000,18000],
+    yFmt:v=>fmt(v), xTicks:sqm.map(p=>p[0]), m:{r:18},
+    series:[{name:"₪ למ״ר",color:"--ariel",area:true,pts:sqm.map(p=>[p[0],p[1]]),
+      tip:(p,i)=>`${p[0]}: ₪${fmt(p[1])} למ״ר<br>n=${sqm[i][2]} עסקאות`,
+      labels:[{i:7,t:"שיא 17,333",dy:-14},{i:0,t:"10,088",dy:-12,anchor:"start",dx:-4}]}]
+  });
+  lineChart($("#c-official"),{
+    aria:"מחיר עסקה חציוני רשמי באריאל",
+    x:[2020.6,2026.4], y:[1300,1800], yTicks:[1300,1400,1500,1600,1700,1800],
+    yFmt:v=>fmt(v)+"K", xTicks:[2021,2022,2023,2024,2025,2026], m:{l:58,r:18},
+    series:[{name:"כל הדירות",color:"--ariel",pts:official.map(p=>[p[0],p[1]]),
+      tip:(p,i)=>`${p[0]} ${official[i][2]}: ₪${fmt(p[1]*1000)}`,
+      labels:[{i:3,t:"1.71M",dy:-14},{i:5,t:"1.58M",dy:18}]}]
+  });
+  lineChart($("#c-pop"),{
+    aria:"אוכלוסיית אריאל בפועל ובתחזית מול יעד הסכם הגג",
+    x:[1990,2036], y:[0,85000], yTicks:[0,20000,40000,60000,80000],
+    yFmt:v=>v?fmt(v/1000)+"K":"0", xTicks:[1990,2000,2010,2020,2026,2036], xSkip:1, m:{l:48,r:20},
+    hlines:[{y:50000,label:"יעד 50 אלף בעשור (אוגוסט 2026)"}],
+    series:[
+      {name:"בפועל ולפי הקצב הנוכחי",color:"--ariel",pts:[[1990,8000],[2024,22191],[2026,22679],[2036,27920]],
+        segs:[{from:0,to:2,dash:false},{from:2,to:3,dash:true}],
+        tip:(p,i)=>i===3?`2036 לפי קצב של 2.1% בשנה: כ-${fmt(p[1])}`:`${p[0]}: ${fmt(p[1])} תושבים`,
+        endLabel:"~28K", endDx:-6, endDy:22, endAnchor:"end"},
+      {name:"יעד",color:"--nat",pts:[[2026,22679],[2036,80000]],segs:[{from:0,to:1,dash:true}],
+        tip:(p,i)=>i?"יעד הסכם הגג: 80,000 (צריך 13.4% בשנה)":"2026: 22,679",
+        endLabel:"80K", endDx:-6, endDy:-10, endAnchor:"end"}
+    ]
+  });
+  // city scatter
+  scatter($("#c-scatter"),{
+    aria:"תשואה מול עליית מחיר בערים",
+    x:[0,11], y:[2.0,3.8], xTicks:[0,2,4,6,8,10], yTicks:[2.0,2.4,2.8,3.2,3.6],
+    xLabel:"עליית מחיר שנתית, 4 חד׳ (2021–2026)", yLabel:"תשואה ברוטו",
+    ref:{x:4.9,y:2.85},
+    pts:cities.map(c=>{
+      const o={n:c.n,x:c.g,y:c.y,price:c.price,me:c.me,nat:c.nat};
+      if(c.n==="ראש העין"){o.dy=-8;}
+      if(c.n==="כפר סבא"){o.dy=16;}
+      if(c.n==="עפולה"){o.dy=-8; o.dx=-9; o.anchor="end";}
+      if(c.n==="ביתר עילית"){o.dx=-9; o.anchor="end";}
+      if(c.n==="בית שמש"){o.dx=-9; o.anchor="end";}
+      if(c.n==="ממוצע ארצי"){o.dy=18;}
+      if(c.n==="אלעד"){o.dy=16;}
+      if(c.n==="כרמיאל"){o.dy=-8;}
+      return o;})
+  });
+  const L = $("#c-irr");
+  columnChart(L,{
+    aria:"תשואה פנימית לפי תרחיש", groups:["שלילי (25%)","בסיס (50%)","חיובי (25%)","ממוצע משוקלל"],
+    y:[-1,8], yTicks:[0,2,4,6,8], yFmt:v=>v+"%", vFmt:v=>(v>0?"":"")+v.toFixed(1)+"%",
+    series:[
+      {name:"אריאל, בלי משכנתא",color:"--ariel",values:[1.7,4.0,6.2,3.98]},
+      {name:"אריאל, 50% משכנתא",color:"--lev",values:[-0.5,3.6,7.1,3.45]},
+      {name:"ממוצע ארצי",color:"--nat",values:[3.0,4.3,5.1,4.18]}
+    ]
+  });
+  const be=[]; for(let g=0; g<=6.5+1e-9; g+=0.5){ be.push([g, model({price:1494000,rentM:4500,g:g/100,gr:0.02}).irr*100]); }
+  lineChart($("#c-be"),{
+    aria:"תשואה פנימית לפי קצב עליית מחיר",
+    x:[0,6.5], y:[0,8], yTicks:[0,2,4,6,8], yFmt:v=>v+"%",
+    xTicks:[0,1,2,3,4,5,6], xFmt:v=>v+"%", xSkip:1, m:{r:20},
+    hlines:[{y:4,label:"~4% אג״ח ממשלתי ארוך"}],
+    vlines:[{x:1.6,label:"אריאל 2021–26: 1.6%",side:"r",dy:0},{x:5.8,label:"הארץ: 5.8%",side:"l",dy:0}],
+    series:[{name:"IRR",color:"--ariel",area:true,pts:be,tip:p=>`עלייה של ${p[0]}% בשנה → תשואה של ${p[1].toFixed(2)}%`,dots:false,mark:[]}]
+  });
+  // security columns
+  columnChart($("#c-sec"),{
+    aria:"פיגועים ביהודה ושומרון", groups:["2023","2024","2025"], y:[0,950], yTicks:[0,300,600,900],
+    yFmt:v=>fmt(v), vFmt:v=>fmt(v), series:[{name:"פיגועים",color:"--neg",values:[850,260,60]}]
+  });
+  lineChart($("#c-rate"),{
+    aria:"ריבית בנק ישראל 2026",
+    x:[0,9], y:[3,4.25], yTicks:[3,3.25,3.5,3.75,4], yFmt:v=>v.toFixed(2)+"%",
+    xTicks:[0,3,5,7,9], xFmt:v=>["ינו׳","","","מרץ","","מאי","","יולי","","ספט׳"][v], xSkip:1, m:{l:52,r:20},
+    series:[{name:"ריבית",color:"--nat",pts:[[0,4],[3,4],[5,3.75],[7,3.5],[9,3.25]],tip:p=>`${p[1].toFixed(2)}%`,endLabel:"3.25%",endDx:-4,endDy:-12,endAnchor:"end"}]
+  });
+}
+
+/* static HTML charts */
+function renderBars(){
+  bars($("#c-rooms"),[
+    {group:"3 חדרים"},{label:"אריאל",v:1347,c:"--ariel",me:true},{label:"ארצי",v:1677,c:"--nat"},
+    {group:"4 חדרים"},{label:"אריאל",v:1494,c:"--ariel",me:true},{label:"ארצי",v:2029,c:"--nat"},
+    {group:"5 חדרים"},{label:"אריאל",v:2082,c:"--ariel",me:true},{label:"ארצי",v:2823,c:"--nat"},
+  ].map(r=>r.group?r:Object.assign(r,{tip:`${r.label}: ₪${fmt(r.v)}K`})), 2900, v=>"₪"+fmt(v)+"K");
+  const byG=[...cities].sort((a,b)=>b.g-a.g);
+  bars($("#c-cagr"), byG.map(c=>({label:c.n,v:c.g,c:c.me?"--ariel":c.nat?"--nat":"--other",me:c.me||c.nat})), 10.5, v=>v.toFixed(1)+"%");
+  const byY=[...cities].sort((a,b)=>b.y-a.y);
+  bars($("#c-yield"), byY.map(c=>({label:c.n,v:c.y,c:c.me?"--ariel":c.nat?"--nat":"--other",me:c.me||c.nat,tip:`${c.n}: ₪${fmt(c.rent)} בחודש / ₪${fmt(c.price)}K`})), 3.8, v=>v.toFixed(2)+"%");
+  bars($("#c-rent"),[
+    {label:"3 חדרים",v:3500,c:"--ariel"},{label:"4 חדרים",v:4500,c:"--ariel"},{label:"5 חדרים",v:4900,c:"--ariel"},
+    {label:"ארצי, כל הדירות",v:5349,c:"--nat",me:true}
+  ], 5600, v=>"₪"+fmt(v));
+  bars($("#c-student"),[
+    {label:"משפחה",v:4500,c:"--ariel",vt:"₪4,500"},
+    {label:"3 סטודנטים, נמוך",v:3900,c:"--other",vt:"₪3,900",tip:"3 × ₪1,300"},
+    {label:"3 סטודנטים, גבוה",v:5100,c:"--other",vt:"₪5,100",tip:"3 × ₪1,700"},
+    {label:"סטודנטים, עם קיץ ריק",v:4250,c:"--other",vt:"~₪4,250",tip:"ממוצע עם חודשיים ריקים בשנה"}
+  ], 5400, v=>"₪"+fmt(v));
+  bars($("#c-funnel"),[
+    {label:"הוכרז (ספט׳ 2026)",v:18000,c:"--nat",vt:"18,000",tip:"הסכם הגג לפי ערוץ 14 ואמס"},
+    {label:"הוכרז (אפר׳–אוג׳ 2026)",v:12000,c:"--nat",o:.75,vt:"12,000"},
+    {label:"מלאי קיים (הערכה)",v:7750,c:"--other",vt:"7,000–8,500",tip:"כ-22,300 תושבים חלקי 2.7–3 נפשות לדירה"},
+    {label:"במכרז או בהפקדה",v:1483,c:"--ariel",vt:"~1,480",tip:"730 אמירים + 473 + 280 פינוי-בינוי"},
+    {label:"נבנו ב-10 שנים עד 2023",v:870,c:"--other",vt:"~870"},
+    {label:"אושר תכנונית (אמירים)",v:730,c:"--ariel",vt:"730"},
+    {label:"נמכרו במכרז 10/2025",v:79,c:"--ariel",vt:"79 מתוך כ-440",me:true},
+  ], 18000, v=>fmt(v));
+  bars($("#c-uni"),[
+    {label:"2013/14",v:15000,c:"--other",vt:"~15,000"},
+    {label:"2019/20 (ות״ת)",v:13541,c:"--ariel",vt:"13,541",me:true},
+    {label:"שיווקי 2025",v:17000,c:"--other",o:.6,vt:"~17,000"},
+    {label:"יעד 2020 (לא הושג)",v:20000,c:"--other",o:.35,vt:"20,000"},
+    {label:"מיטות במעונות",v:1586,c:"--nat",vt:"1,586"},
+  ], 20000, v=>fmt(v));
+  // commute: range bars
+  const cm=$("#c-commute"); cm.innerHTML="";
+  [["רכב, לא בשעת עומס",35,35],["אוטובוס, לא בשעת עומס",59,59],["רכב, שעת שיא (הערכה)",60,90],["אוטובוס, שעת שיא (הערכה)",85,120]].forEach(([l,a,b])=>{
+    const lab=document.createElement("div"); lab.className="lab"; lab.textContent=l; cm.appendChild(lab);
+    const t=document.createElement("div"); t.className="track";
+    const wrap=document.createElement("div"); wrap.style.cssText="flex:1;min-width:0;display:flex;align-items:center;gap:8px";
+    const box=document.createElement("div"); box.style.cssText=`display:flex;gap:0;width:${b/125*82}%`;
+    const b1=document.createElement("div"); b1.className="bar"; b1.style.cssText=`width:${a/b*100}%;background:var(--nat);border-radius:${a===b?"4px 0 0 4px":"0"}`;
+    box.appendChild(b1);
+    if (b>a){ const b2=document.createElement("div"); b2.className="bar"; b2.style.cssText=`width:${(b-a)/b*100}%;background:var(--nat);opacity:.35`; box.appendChild(b2); }
+    box.setAttribute("data-tip", a===b?`${l}: ${a} דק׳`:`${l}: ${a}–${b} דק׳`);
+    const v=document.createElement("div"); v.className="val"; setVal(v, a===b?`${a} דק׳`:`${a}–${b} דק׳`);
+    wrap.appendChild(box); wrap.appendChild(v); t.appendChild(wrap); cm.appendChild(t);
+  });
+  // cost stack
+  const costs=[["מחיר הדירה",1500000,"--other"],["מס רכישה 8%",120000,"--ariel"],["עו״ד, תיווך, שמאות ~2%",30000,"--s4"]];
+  const tot=costs.reduce((a,c)=>a+c[1],0);
+  const st=$("#c-costs"); st.innerHTML=""; const lg=$("#l-costs"); lg.innerHTML="";
+  costs.forEach(([n,v,c])=>{ const d=document.createElement("div"); d.style.flex=String(v); d.style.background=`var(${c})`; d.style.minWidth="6px"; d.setAttribute("data-tip",`${n}: ₪${fmt(v)}`); st.appendChild(d);
+    const s=document.createElement("span"); s.innerHTML=`<i style="background:var(${c})"></i>${n}: ₪${fmt(v)}`; lg.appendChild(s); });
+  const s=document.createElement("span"); s.innerHTML=`<b>סה״כ ₪${fmt(tot)}. העלויות הנוספות (₪150,000) שוות לכ-2.8 שנות שכר דירה ברוטו</b>`; lg.appendChild(s);
+  // politics stack
+  const pol=[["סטטוס קוו / ריבונות בפועל",70,"--nat","המחירים הולכים אחרי הביקוש בגוש דן, בהנחה. הלחץ הבינלאומי על המימון עולה בהדרגה."],
+             ["ריבונות רשמית",12,"--ariel","חיובי לאריאל: רישום בטאבו ומחיר בלי \"הנחת התנחלות\", עלייה של 10%–20%. מנגד: סנקציות וחיכוך."],
+             ["הסדר מדיני",10,"--lev","אם אריאל בצד הישראלי: חיובי. אם לא: הפסד כבד. זה סיכון נדיר שאי אפשר לבטח."],
+             ["הסלמה ביטחונית ממושכת",8,"--s4","שלילי ל-3–5 שנים, בעיקר לשכירות לסטודנטים ולאפשרות למכור."]];
+  const ps=$("#c-pol"); ps.innerHTML="";
+  const tp=$("#t-pol"); tp.innerHTML="<tr><th></th><th>תרחיש</th><th>הסתברות</th><th>השפעה על הערך</th></tr>";
+  pol.forEach(([n,p,c,d])=>{ const x=document.createElement("div"); x.style.flex=String(p); x.style.background=`var(${c})`; x.textContent=p>=10?p+"%":""; x.setAttribute("data-tip",`${n}: ${p}%`); ps.appendChild(x);
+    const tr=document.createElement("tr"); tr.innerHTML=`<td><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:var(${c})"></i></td><td style="white-space:normal"><b>${n}</b></td><td>~${p}%</td><td style="white-space:normal">${d}</td>`; tp.appendChild(tr); });
+  // city table
+  const tc=$("#t-cities"); tc.innerHTML="<tr><th>עיר</th><th>מחיר 4 חד׳</th><th>עליית מחיר 4 חד׳</th><th>עליית מחיר, כל הדירות</th><th>שכר דירה</th><th>תשואה ברוטו</th></tr>";
+  cities.forEach(c=>{ const tr=document.createElement("tr"); if(c.me) tr.className="me"; tr.innerHTML=`<td>${c.n}</td><td>₪${fmt(c.price)}K</td><td>${c.g}%</td><td>${c.gall}%</td><td>₪${fmt(c.rent)}</td><td>${c.y.toFixed(2)}%</td>`; tc.appendChild(tr); });
+}
+
+/* timeline */
+const events=[
+  [1991,"--nat","<b>תוכנית 130/3/1 אושרה:</b> כ-1,600 דירות במערב אריאל"],
+  [2010,"--lev","היכל התרבות נפתח, והוחרם על ידי יותר מ-60 אמנים"],
+  [2012,"--lev","אריאל הוכרה כאוניברסיטת מחקר"],
+  [2017,"--nat","אריאל דרום: 839 דירות אושרו"],
+  [2018,"--ariel","<b>הוכרזה רכבת קלה</b> אריאל–פתח תקווה, עם יעד ל-2025 שלא התממש"],
+  [2019,"--lev","ביה״ס לרפואה ע״ש אדלסון נפתח"],
+  [2021,"--nat","מכרז אמירים ל-731 דירות לא יצא לפועל"],
+  [2022,"--neg","פיגוע באזור התעשייה, 3 הרוגים"],
+  [2024,"--nat","התחילו עבודות תשתית באמירים. הגרלת \"דירה בהנחה\" ל-102 דירות"],
+  [2025,"--ariel","<b>מבצע \"חומת ברזל\"</b> בצפון השומרון. בכנסת עברו הצבעות סמליות בעד ריבונות"],
+  [2025,"--nat","<b>מכרז אוקטובר:</b> נמכרו רק 79 מתוך כ-440 דירות"],
+  [2026,"--ariel","פברואר: החלטות הקבינט על פתיחת פנקסי המקרקעין ורישום מקרקעין בשטח C"],
+  [2026,"--nat","אפריל: הונחה אבן פינה ל\"12,000 דירות\""],
+  [2026,"--ariel","יוני: חוק זיכוי המס של 7% עבר, ואריאל לא נכללה בו"],
+  [2026,"--lev","אוגוסט: הוכרז על בית חולים ונחתם הסכם החיבור לשפד״ן"],
+  [2026,"--ariel","8 בספטמבר: <b>סנקציות</b> של בריטניה, צרפת וקנדה"],
+  [2026,"--nat","11 בספטמבר: <b>הסכם הגג נחתם</b>, 18,000 דירות ו-3 מיליארד ₪"],
+  ["10/2026","--ariel","27 באוקטובר: בחירות לכנסת", true],
+  [2027,"--ariel","הסנקציות הבריטיות על מימון צפויות להיכנס לתוקף", true],
+  ["2030+","--nat","דירות מהסכם הגג מתחילות להיכנס לשוק", true],
+];
+function renderTL(){
+  const ul=$("#tl"); ul.innerHTML="";
+  let last=null;
+  events.forEach(([y,c,t,f])=>{ const li=document.createElement("li"); if(f) li.className="future";
+    li.innerHTML=`<div class="y">${y===last?"":y}</div><div><div class="dot" style="background:var(${c})"></div></div><div class="tx">${t}</div>`; last=y; ul.appendChild(li); });
+}
+
+/* checklists */
+const chk1=["אישור זכויות מהמנהל האזרחי או מהחברה המשכנת","לבדוק שאפשר לרשום משכנתא ולקבל אישור עקרוני משלושה בנקים","לבדוק שהדירה לא יושבת על קרקע פרטית שנויה במחלוקת","לברר אם אפשר לרשום הערת אזהרה ואיך","לברר כמה גובה החברה המשכנת על העברת זכויות","חוות דעת שמאי והשוואה לעסקאות ב-nadlan.gov.il","לבדוק אם הבניין מיועד לפינוי-בינוי או להתחדשות","לבדוק ביטוח מבנה ותכולה בכתובת הספציפית","לחשב מס רכישה ולבדוק זכאות לפטור ממס על שכר הדירה"];
+const chk2=["פרסום נוסח הסכם הגג הרשמי ולוח שיווק הקרקעות של רמ״י","התחלות בנייה באריאל בהלמ״ס (קוד יישוב 3570)","תוצאות המכרזים הבאים באריאל מערב","לוח זמנים לחיבור לשפד״ן ולמחלפים","הכללת אריאל ברשימת היישובים שמקבלים זיכוי מס","יישום הסנקציות הבריטיות והתגובה של הבנקים","מספר הסטודנטים הרשום בות״ת","תוצאות הבחירות ב-27 באוקטובר 2026"];
+function renderChecks(){
+  let saved={}; try{ saved=JSON.parse(localStorage.getItem("ariel-chk")||"{}"); }catch(e){}
+  [["#chk1",chk1,"a"],["#chk2",chk2,"b"]].forEach(([sel,list,p])=>{
+    const ul=$(sel); ul.innerHTML="";
+    list.forEach((t,i)=>{ const id=`chk-${p}${i}`; const li=document.createElement("li");
+      li.innerHTML=`<label for="${id}"><input type="checkbox" id="${id}" ${saved[id]?"checked":""}><span>${t}</span></label>`; ul.appendChild(li); });
+  });
+  document.addEventListener("change",e=>{ if(e.target.id && e.target.id.startsWith("chk-")){ let s={}; try{ s=JSON.parse(localStorage.getItem("ariel-chk")||"{}"); s[e.target.id]=e.target.checked; localStorage.setItem("ariel-chk",JSON.stringify(s)); }catch(err){} } });
+}
+
+/* calculator */
+const presets={bear:{g:0,gr:1},base:{g:2.5,gr:2},bull:{g:5.5,gr:3}};
+function calc(){
+  const v=id=>parseFloat($(id).value)||0;
+  const r=model({price:v("#f-price"),rentM:v("#f-rent"),g:v("#f-g")/100,gr:v("#f-gr")/100,ltv:Math.min(v("#f-ltv"),90)/100,rate:v("#f-rate")/100,years:Math.max(2,Math.round(v("#f-years")))});
+  const nat=model({price:2029000,rentM:4825,g:(v("#f-g")+1)/100,gr:(v("#f-gr")+0.5)/100,years:Math.max(2,Math.round(v("#f-years")))});
+  const i=r.irr*100;
+  const o=$("#o-irr"); o.textContent=(isFinite(i)?i.toFixed(1):"—")+"%"; o.className="big "+(i<0?"neg":"");
+  $("#o-cmp").innerHTML=`דירה ממוצעת בארץ, עם עלייה גבוהה ב-1 נקודת אחוז: <b>${(nat.irr*100).toFixed(1)}%</b>`;
+  $("#o-eq").textContent=ils(r.equity);
+  $("#o-tax").textContent=ils(r.buyTax);
+  $("#o-gy").textContent=(r.gy*100).toFixed(2)+"%";
+  const cf=r.cf1/12; const c=$("#o-cf"); c.textContent=(cf<0?"−":"")+ils(Math.abs(cf)); c.className=cf<0?"neg":"";
+  $("#o-sale").textContent=ils(r.sale);
+  $("#o-shevach").textContent=ils(r.tax);
+  const pr=$("#o-profit"); pr.textContent=(r.profit<0?"−":"")+ils(Math.abs(r.profit)); pr.className=r.profit<0?"neg":"";
+}
+function bindCalc(){
+  const pair=(a,b)=>{ $(a).addEventListener("input",()=>{ $(b).value=$(a).value; clearPreset(); calc(); }); $(b).addEventListener("input",()=>{ $(a).value=$(b).value; clearPreset(); calc(); }); };
+  pair("#f-g","#r-g"); pair("#f-ltv","#r-ltv");
+  ["#f-price","#f-rent","#f-gr","#f-rate","#f-years"].forEach(s=>$(s).addEventListener("input",()=>{ if(s==="#f-gr") clearPreset(); calc(); }));
+  document.querySelectorAll(".pbtn").forEach(b=>b.addEventListener("click",()=>{
+    const p=presets[b.dataset.p]; $("#f-g").value=p.g; $("#r-g").value=p.g; $("#f-gr").value=p.gr;
+    document.querySelectorAll(".pbtn").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); calc(); }));
+  function clearPreset(){ document.querySelectorAll(".pbtn").forEach(x=>x.setAttribute("aria-pressed","false")); }
+  calc();
+}
+
+/* sources */
+const sources=[
+ ["nadlan.gov.il: נתוני עסקאות ושכירות לאריאל (3570) ולערים להשוואה, גרסה 20.8.2026","https://data.nadlan.gov.il/api/pages/settlement/buy/3570.json"],
+ ["ארכיון העסקאות של משרד תיווך מקומי","https://www.reariel.co.il/dyrvt-shnmkrv"],
+ ["ביזפורטל, 17.10.2024: דירה בהנחה באריאל","https://www.bizportal.co.il/realestates/news/article/835221"],
+ ["אמס, 11.9.2026: הסכם הגג","https://www.emess.co.il/radio/1928274"],
+ ["ערוץ 14: הסכם הגג","https://www.c14.co.il/article/1699201"],
+ ["אמס, 25.8.2026: החיבור לשפד״ן","https://www.emess.co.il/radio/1920610"],
+ ["ערוץ 7, 27.4.2026: אבן הפינה","https://www.inn.co.il/news/695540"],
+ ["Times of Israel, 27.4.2026: 730 מתוך 12,000 מאושרות","https://www.timesofisrael.com/liveblog_entry/cornerstone-laid-for-new-settlement-development-in-ariel-set-to-include-12000-housing-units/"],
+ ["כלכליסט: דוח מבקר המדינה על הסכמי הגג","https://www.calcalist.co.il/local_news/article/sk11wz13bk"],
+ ["נדל״ן סנטר, 21.10.2025: מכרז אמירים","https://www.nadlancenter.co.il/article/13066"],
+ ["שלום עכשיו: תוכניות ומכרזים באריאל","https://peacenow.org.il/en/settlements/settlement16-en"],
+ ["כלכליסט, 15.1.2024: אריאל לפני הבחירות לרשות","https://www.calcalist.co.il/real-estate/article/hy01e611y6"],
+ ["רשימת היישובים המוטבים 2026 (רשות המסים)","https://he.wikisource.org/wiki/הודעת_מס_הכנסה_(רשימת_יישובים_מוטבים_לשנת_2026)"],
+ ["רשות המסים, 9.7.2026: יישובי קו העימות המזרחי","https://www.gov.il/BlobFolder/dynamiccollectorresultitem/employers-info-090726-1/he/IncomeTax_employers-info-090726-1.pdf"],
+ ["ice, 18.8.2026: הכרזה על בית חולים","https://www.ice.co.il/health/news/article/1126101"],
+ ["תוכנית משרד הבריאות לבתי חולים עד 2050","https://publichealth.doctorsonly.co.il/2023/02/279403/"],
+ ["ynet, 22.9.2025: מטרונית השומרון","https://www.ynet.co.il/news/article/bj5r00oasge"],
+ ["Globes, 15.3.2018: רכבת קלה לאריאל","https://www.globes.co.il/news/article.aspx?did=1001227963"],
+ ["נדל״ן סנטר, 27.10.2025: מרכז מסחרי באריאל מערב","https://www.nadlancenter.co.il/article/13089"],
+ ["JPost, 13.9.2026: נתוני טרור ביהודה ושומרון","https://www.jpost.com/israel-news/defense-news/article-908442"],
+ ["CNBC, 8.9.2026: סנקציות בריטניה","https://www.cnbc.com/2026/09/08/uk-israel-sanctions-miliband-florida-trump.html"],
+ ["Al Jazeera, 8.9.2026: סנקציות","https://www.aljazeera.com/news/2026/9/8/uk-announces-sanctions-on-illegal-israeli-settlements"],
+ ["שלום עכשיו: החלטות הקבינט על מקרקעין, פברואר 2026","https://peacenow.org.il/en/cabinet-land-decisions"],
+ ["Times of Israel: רישום מקרקעין בשטח C","https://www.timesofisrael.com/cabinet-oks-new-west-bank-land-registration-process-critics-decry-de-facto-annexation/"],
+ ["Axios, 23.10.2025: ונס על הצבעת הסיפוח","https://www.axios.com/2025/10/23/vance-israel-annexation-west-bank-knesset-vote"],
+ ["Times of Israel, 4.9.2026: מצב שוק הדיור","https://www.timesofisrael.com/housing-snapshot-september-2026-prices-inch-upward-after-sharp-decline/"],
+ ["Bloomberg, 1.9.2026: הורדת ריבית","https://www.bloomberg.com/news/articles/2026-09-01/israel-slashes-interest-rates-for-third-consecutive-meeting"],
+ ["תקציב עיריית אריאל (מפתח התקציב)","https://next.obudget.org/i/org/municipality/500235700"],
+ ["ויקיפדיה: אריאל (נתוני אוכלוסייה מהלמ״ס)","https://he.wikipedia.org/wiki/אריאל"],
+ ["ויקיפדיה: אוניברסיטת אריאל","https://he.wikipedia.org/wiki/אוניברסיטת_אריאל_בשומרון"],
+ ["JNS, 25.9.2024: המחזור הראשון בביה״ס לרפואה","https://www.jns.org/ariels-adelson-school-of-medicine-marks-first-graduating-class/"],
+ ["מרכז טאוב: דוח דמוגרפיה 2024","https://www.taubcenter.org.il/wp-content/uploads/2025/01/Demography-2024-HEB-2.pdf"],
+ ["מדריך משפטי: נדל״ן ביהודה ושומרון","https://yasmint-law.com/נדלן-ביהודה-ושומרון/"],
+ ["gov.il: נסח רישום מקרקעין ביהודה ושומרון","https://www.gov.il/he/service/land_registration_extract_samaria"],
+ ["ביזפורטל: מס רכישה 2026","https://www.bizportal.co.il/realestates/news/article/20038028"],
+ ["Grant Thornton: מיסוי שכר דירה 2026","https://www.grantthornton.co.il/insights1/tax-insignths/2026/income_from_renting_an_apartment/"],
+];
+function renderSources(){ const ol=$("#src-list"); ol.innerHTML=""; sources.forEach(([t,u])=>{ const li=document.createElement("li"); li.innerHTML=`${t}<br><a href="${u}" target="_blank" rel="noopener">${u.replace(/^https?:\/\//,"").slice(0,70)}${u.length>78?"…":""}</a>`; ol.appendChild(li); }); }
+
+renderBars(); renderTL(); renderChecks(); bindCalc(); renderSources();
+function safeRender(){ try{ renderAll(); }catch(e){ console.error(e); } }
+safeRender();
+let rt; const ro=new ResizeObserver(()=>{ clearTimeout(rt); rt=setTimeout(safeRender,120); });
+document.querySelectorAll(".chart").forEach(c=>ro.observe(c));
+// re-render SVG colors on theme change
+new MutationObserver(safeRender).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+try{ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",safeRender); }catch(e){}
+})();
+</script>
+</body>
+</html>
